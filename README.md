@@ -1,4 +1,5 @@
-# Some Side Experimentation 
-This is just a side project for the summer.
+# HTML Fun
 
-It's never too late to learn as they say
+Screwing around with HTML and GitHub Pages.
+
+Woohoo
