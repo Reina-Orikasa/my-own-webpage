@@ -14,7 +14,7 @@ p.title_nep {
     font-family: helvetica;
 }
 
-a:link, a:visited {
+a.GitHub:link, a.GitHub:visited {
     background-color: white;
     color: black;
     border: 2px solid skyblue;
@@ -24,11 +24,11 @@ a:link, a:visited {
     display: inline-block;
     position: fixed;
     top: 50px;
-    left: 450px;
+    left: 100px;
 }
 
 
-a:hover, a:active {
+a.GitHub:hover, a.GitHub:active {
     background-color: skyblue;
     color:white;
 }
@@ -44,7 +44,7 @@ a.myanimelist:link, a.myanimelist:visited {
     display: inline-block;
     position: fixed;
     top: 50px;
-    left: 250px;
+    left: 300px;
 
 }
 
@@ -53,11 +53,30 @@ a.myanimelist:hover, a.myanimelist:active{
     color:white;
 }
 
+
 img.neptitle{
     position: fixed;
     left: 650px;
     top: 10px;
     border: 4mm ridge rgb(170, 50, 220, .6);
+}
+
+h1.testing {
+    font-family: helvetica;
+    font-size: 15px;
+    position: absolute;
+    left: 90px;
+    top: 130px;
+
+}
+
+div.topbox{
+    position: fixed;
+    width: 98%;
+    height: 168px;
+    top: 10px;
+    border: 3px solid lightpink;
+    background-color: rgba(255,255,255, 0.6);
 }
 
 
