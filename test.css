@@ -1,14 +1,16 @@
 body {
-    background-image: url("https://vignette.wikia.nocookie.net/neptunia/images/8/8a/Planeptune_mk2_%28Day%29.PNG/revision/latest?cb=20130923184021");
+    background-image: url("https://vignette.wikia.nocookie.net/neptunia/images/1/13/UD_Planeptune_Night.png/revision/latest?cb=20141021181025&format=original");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: 100%;
 }
 
 @media screen and (max-width: 600px) {
     body{
-    background-image: url("https://vignette.wikia.nocookie.net/neptunia/images/1/13/UD_Planeptune_Night.png/revision/latest?cb=20141021181025");
+    background-image: url("https://image.ibb.co/jFGDkJ/Cyberdimension_Mobile_Wallpaper_1080x1920_02.jpg");
+
     }
+
 }
 
 p.title_nep {
@@ -29,8 +31,8 @@ a.GitHub:link, a.GitHub:visited {
     text-decoration: none;
     display: inline-block;
     position: fixed;
-    top: 50px;
-    left: 100px;
+    top: 4%;
+    left: 6%;
 }
 
 
@@ -49,8 +51,8 @@ a.myanimelist:link, a.myanimelist:visited {
     text-decoration: none;
     display: inline-block;
     position: fixed;
-    top: 50px;
-    left: 300px;
+    top: 4%;
+    left: 20%;
 
 }
 
@@ -62,17 +64,18 @@ a.myanimelist:hover, a.myanimelist:active{
 
 img.neptitle{
     position: fixed;
-    left: 650px;
-    top: 10px;
-    border: 4mm ridge rgb(170, 50, 220, .6);
+    left: 45%;
+    max-width: 100%;
+    max-height: auto;
+    border: 3.5mm ridge rgb(242, 194, 234, .6);
 }
 
 h1.testing {
     font-family: helvetica;
     font-size: 15px;
     position: absolute;
-    left: 90px;
-    top: 130px;
+    left: 5%;
+    top: 50%;
 
 }
 
