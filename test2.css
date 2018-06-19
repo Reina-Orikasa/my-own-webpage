@@ -68,8 +68,14 @@ li a:hover {
 
 
 @media screen and (max-width: 600px){
-    .flex-container, .links{
+    .flex-container, ul, li{
         flex-direction: column;
+    }
+
+    .header{
+        background-image: none;
+        background-color: skyblue;
+    
     }
 }
 
