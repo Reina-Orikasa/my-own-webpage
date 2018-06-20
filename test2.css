@@ -3,11 +3,10 @@
 }
 
 .header{
-    padding: 25px;
-    text-align: center;
-    background-image: url("https://vignette.wikia.nocookie.net/hyperdimensionneptunia/images/5/50/Planeptune_Night.jpg/revision/latest?cb=20110701185821");
-    background-size: 100%;
-    color: white;
+    padding: 10px;
+    text-align: left;
+    background-image: url("https://vignette.wikia.nocookie.net/hyperdimensionneptunia/images/d/d4/Planeptune-mk2.jpg/revision/latest?cb=20110605020039");
+    background-size: 100% auto;
 }
 
 ul{
