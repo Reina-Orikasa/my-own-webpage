@@ -54,10 +54,10 @@ li a:hover {
 }
 
 .footer{
-    padding: 5px;
+    padding: 2px;
     text-align: center;
     background: lightpink;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .nepimg{
@@ -78,3 +78,6 @@ li a:hover {
     }
 }
 
+.titleheader{
+    font-family: Arial, Helvetica, sans-serif;
+}
