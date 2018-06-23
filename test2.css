@@ -3,10 +3,12 @@
 }
 
 .header{
-    padding: 10px;
-    text-align: left;
-    background-image: url("https://vignette.wikia.nocookie.net/hyperdimensionneptunia/images/d/d4/Planeptune-mk2.jpg/revision/latest?cb=20110605020039");
+    padding: 0.5px;
+    text-align: center;
+    background-color: powderblue;
     background-size: 100% auto;
+    display:flex;
+    justify-content:center;
 }
 
 ul{
@@ -21,7 +23,7 @@ ul{
 
 
 li {
-    float: left;
+    display:inline-block;
 }
 
 li a {
@@ -76,8 +78,27 @@ li a:hover {
         background-color: skyblue;
     
     }
+
+    .nepheader{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
 }
 
 .titleheader{
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.nepheader{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.nepneps{
+    color: orange;
+    left: 5%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
 }
