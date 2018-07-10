@@ -11,7 +11,7 @@
     justify-content:center;
 }
 
-ul{
+ul.head{
     list-style-type: none;
     margin: 0 auto;
     width: 100%;
@@ -22,11 +22,11 @@ ul{
 }
 
 
-li {
+li.head {
     display:inline-block;
 }
 
-li a {
+li.head a {
     color: black;
     padding: 15px 20px;
     display: block;
@@ -34,7 +34,7 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+li.head a:hover {
     background-color: skyblue;
     color: black;
 }
@@ -109,12 +109,12 @@ li a:hover {
 }
 
 #toc {
-    background: lightblue none repeat scroll 0 0;
+    background: lightskyblue none repeat scroll 0 0;
     border: 1px solid #aaa;
     display: table;
     font-size: 95%;
     margin-bottom: 1em;
-    padding: 20px;
+    padding: 15px;
     width: auto;
 }
 
@@ -132,4 +132,34 @@ li a:hover {
     margin: auto;
     background: white;
     padding: 10px; 
+}
+
+ul.tc{
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    display: inline-block;
+}
+
+
+li.tc {
+    display: flex;
+}
+
+li.tc a {
+    color: black;
+    padding: 15px 20px;
+    display: block;
+    background-color: orange;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
+    width: 100%;
+}
+
+li.tc a:hover {
+    background-color: pink;
+    color: black;
 }
