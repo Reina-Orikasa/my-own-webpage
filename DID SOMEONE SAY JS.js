@@ -24,7 +24,7 @@ function weather() {
     var weatherTypes = ['Sunny', 'Rain', 'Cloudy'];
     var loweeWeatherTypes = ['Sunny', 'Snow', 'Cloudy']
     
-    if (localHour > 8 && localHour < 12) {
+    if (localHour >= 8 && localHour < 12) {
         planeptuneWeather = 55;
         lastationWeather = 71;
         loweeWeather = 22;
@@ -37,7 +37,7 @@ function weather() {
 
         return [planeptuneWeather, lastationWeather, loweeWeather, leanboxWeather, planeptuneWeatherType, lastationWeatherType, loweeWeatherType, leanboxWeatherType];
     }
-    else if (localHour > 12 && localHour < 17){
+    else if (localHour >= 12 && localHour <= 17){
         planeptuneWeather = 72;
         lastationWeather = 85;
         loweeWeather = 35;
