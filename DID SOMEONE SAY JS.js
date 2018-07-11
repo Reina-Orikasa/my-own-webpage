@@ -53,4 +53,4 @@ var lastationWeather = weatherData[1];
 var loweeWeather = weatherData[2];
 var leanboxWeather = weatherData[3];
 
-document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + planeptuneWeather + ("<br>") + ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + "Lastation: " + lastationWeather + ("<br>") + "Lowee: " + loweeWeather + ("<br>") + "Leanbox: " + leanboxWeather; 
+document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + planeptuneWeather + ("<br>") + ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " + lastationWeather + ("<br>") + "Lowee: " + loweeWeather + ("<br>") + "Leanbox: " + leanboxWeather; 
