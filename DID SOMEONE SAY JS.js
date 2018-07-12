@@ -4,9 +4,11 @@ var month = time.getMonth() + 1;
 
 var day = time.getDate();
 
+// slice(-2) for the leading zero if necessary
 var hour = ('0' + time.getHours()).slice(-2);
 
-var minute = mins = ('0'+time.getMinutes()).slice(-2);
+// slice (-2) for leading zero in minutes
+var minute = mins = ('0'+ time.getMinutes()).slice(-2);
 
 document.getElementById('test').innerHTML = "Today's date is: " + month + "/" + day + ("<br>") + "The time is: " + hour + ":" + minute;
 
@@ -17,12 +19,12 @@ function weather() {
     var lastationWeather = 0;
     var loweeWeather = 0;
     var leanboxWeather = 0;
-    var planeptuneWeatherType = ''
-    var lastationWeatherType = ''
-    var loweeWeatherType = ''
-    var leanboxWeatherType = ''
+    var planeptuneWeatherType = '';
+    var lastationWeatherType = '';
+    var loweeWeatherType = '';
+    var leanboxWeatherType = '';
     var weatherTypes = ['Sunny', 'Rain', 'Cloudy'];
-    var loweeWeatherTypes = ['Sunny', 'Snow', 'Cloudy']
+    var loweeWeatherTypes = ['Sunny', 'Snow', 'Cloudy'];
     
     if (localHour >= 8 && localHour < 12) {
         planeptuneWeather = 55;
