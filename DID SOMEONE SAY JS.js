@@ -6,9 +6,9 @@ displayTime.month = displayTime.time.getMonth() + 1; //since arrays start at zer
 
 displayTime.day = displayTime.time.getDate();
 
-displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2); //slices time for leading zero if needed
+displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2); // slices time for leading zero if needed
 
-displayTime.minute = ('0'+ displayTime.time.getMinutes()).slice(-2); //slices time for leading zero if needed
+displayTime.minute = ('0'+ displayTime.time.getMinutes()).slice(-2);// slices time for leading zero if needed
 
 document.getElementById('test').innerHTML = "Today's date is: " + displayTime.month + "/" + displayTime.day + ("<br>") + "The time is: " + displayTime.hour + ":" + displayTime.minute;
 
@@ -80,4 +80,19 @@ else {
     worldwideTemperatures.leanboxType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() * worldwideTemperatures.weatherTypes.length)];
 }
 
-document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + worldwideTemperatures.planeptune + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") + ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " + worldwideTemperatures.lastation + "&#176;F" +  ", " + worldwideTemperatures.lastationType + ("<br>") + "Lowee: " + worldwideTemperatures.lowee + "&#176;F" + ", " + worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanbox  + "&#176;F" + ", " + worldwideTemperatures.leanboxType; 
+document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + worldwideTemperatures.planeptune + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") + ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " + worldwideTemperatures.lastation + "&#176;F" +  ", " + worldwideTemperatures.lastationType + ("<br>") + "Lowee: " + worldwideTemperatures.lowee + "&#176;F" + ", " + worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanbox  + "&#176;F" + ", " + worldwideTemperatures.leanboxType;
+
+var totalEpisodes = {};
+
+totalEpisodes.happySugarLife = 12;
+totalEpisodes.watchedSugarLife = document.getElementById('currentlyWatched');
+totalEpisodes.watchedSugarLifeCurrent = totalEpisodes.watchedSugarLife.textContent;
+totalEpisodes.currentEpisodesWatched = parseInt(totalEpisodes.watchedSugarLifeCurrent.match(/(\d+)$/)[0], 10);
+
+totalEpisodes.sugarLifeAired = document.getElementById('currentlyAired');
+totalEpisodes.sugarLifeAiredTotal = totalEpisodes.sugarLifeAired.textContent;
+totalEpisodes.totalSugarLifeAired = parseInt(totalEpisodes.sugarLifeAiredTotal.match(/(\d+)$/)[0], 10);
+
+totalEpisodes.episodesBehind = totalEpisodes.totalSugarLifeAired - totalEpisodes.currentEpisodesWatched;
+document.getElementById('episodesBehind').innerHTML = "<b>I am currently " + totalEpisodes.episodesBehind + " episodes behind!</b>";
+document.getElementById('totalEpisodes').innerHTML = "<b>Total episodes: " + totalEpisodes.happySugarLife +"</b";

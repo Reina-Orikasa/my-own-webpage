@@ -175,3 +175,7 @@ li.tc a:hover {
     background-color: pink;
     color: black;
 }
+
+.animeStats{
+    display: inline;
+}
