@@ -2,19 +2,21 @@ var displayTime = {}; //global time container
 
 displayTime.time = new Date();
 
-displayTime.month = displayTime.time.getMonth() + 1; //since arrays start at zero ;) 
+displayTime.month = displayTime.time.getMonth() + 1;
 
 displayTime.day = displayTime.time.getDate();
 
-displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2); // slices time for leading zero if needed
+displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2);
 
-displayTime.minute = ('0'+ displayTime.time.getMinutes()).slice(-2);// slices time for leading zero if needed
+displayTime.minute = ('0'+ displayTime.time.getMinutes()).slice(-2);
 
-document.getElementById('test').innerHTML = "Today's date is: " + displayTime.month + "/" + displayTime.day + ("<br>") + "The time is: " + displayTime.hour + ":" + displayTime.minute;
+document.getElementById('test').innerHTML = "Today's date is: " +
+ displayTime.month + "/" + displayTime.day + ("<br>") + 
+ "The time is: " + displayTime.hour + ":" + displayTime.minute;
 
 var worldwideTemperatures = {}; //global weather container
 
-worldwideTemperatures.currentTime = displayTime.time; //gets time from container above
+worldwideTemperatures.currentTime = displayTime.time;
 
 worldwideTemperatures.hour = displayTime.hour;
 
@@ -38,7 +40,6 @@ worldwideTemperatures.weatherTypes = ['Sunny', 'Rain', 'Cloudy'];
 
 worldwideTemperatures.loweeWeatherTypes = ['Sunny', 'Snow', 'Cloudy'];
 
-//checks time and displays temperatures according to time found
 if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
 
     worldwideTemperatures.planeptune = 55;
@@ -46,10 +47,14 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
     worldwideTemperatures.lowee = 22;
     worldwideTemperatures.leanbox = 64;
 
-    worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() * worldwideTemperatures.weatherTypes.length)];
-    worldwideTemperatures.lastationType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() * worldwideTemperatures.weatherTypes.length)];
-    worldwideTemperatures.loweeType = worldwideTemperatures.loweeWeatherTypes[Math.floor(Math.random() * worldwideTemperatures.loweeWeatherTypes.length)];
-    worldwideTemperatures.leanboxType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() * worldwideTemperatures.weatherTypes.length)];
+    worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.weatherTypes.length)];
+    worldwideTemperatures.lastationType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.weatherTypes.length)];
+    worldwideTemperatures.loweeType = worldwideTemperatures.loweeWeatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.loweeWeatherTypes.length)];
+    worldwideTemperatures.leanboxType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.weatherTypes.length)];
 
 }
 
@@ -59,10 +64,14 @@ else if (worldwideTemperatures.hour >= 12 && worldwideTemperatures.hour <= 17){
     worldwideTemperatures.lowee = 35;
     worldwideTemperatures.leanbox = 72;
 
-    worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() * worldwideTemperatures.weatherTypes.length)];
-    worldwideTemperatures.lastationType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() * worldwideTemperatures.weatherTypes.length)];
-    worldwideTemperatures.loweeType = worldwideTemperatures.loweeWeatherTypes[Math.floor(Math.random() * worldwideTemperatures.loweeWeatherTypes.length)];
-    worldwideTemperatures.leanboxType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() * worldwideTemperatures.weatherTypes.length)];
+    worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.weatherTypes.length)];
+    worldwideTemperatures.lastationType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.weatherTypes.length)];
+    worldwideTemperatures.loweeType = worldwideTemperatures.loweeWeatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.loweeWeatherTypes.length)];
+    worldwideTemperatures.leanboxType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.weatherTypes.length)];
 }
 
 else { 
@@ -74,13 +83,23 @@ else {
     worldwideTemperatures.lowee = 18;
     worldwideTemperatures.leanbox = 54;
 
-    worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() * worldwideTemperatures.weatherTypes.length)];
-    worldwideTemperatures.lastationType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() * worldwideTemperatures.weatherTypes.length)];
-    worldwideTemperatures.loweeType = worldwideTemperatures.loweeWeatherTypes[Math.floor(Math.random() * worldwideTemperatures.loweeWeatherTypes.length)];
-    worldwideTemperatures.leanboxType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() * worldwideTemperatures.weatherTypes.length)];
+    worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.weatherTypes.length)];
+    worldwideTemperatures.lastationType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.weatherTypes.length)];
+    worldwideTemperatures.loweeType = worldwideTemperatures.loweeWeatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.loweeWeatherTypes.length)];
+    worldwideTemperatures.leanboxType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
+        worldwideTemperatures.weatherTypes.length)];
 }
 
-document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + worldwideTemperatures.planeptune + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") + ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " + worldwideTemperatures.lastation + "&#176;F" +  ", " + worldwideTemperatures.lastationType + ("<br>") + "Lowee: " + worldwideTemperatures.lowee + "&#176;F" + ", " + worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanbox  + "&#176;F" + ", " + worldwideTemperatures.leanboxType;
+document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + 
+worldwideTemperatures.planeptune + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") + 
+("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " + 
+worldwideTemperatures.lastation + "&#176;F" +  ", " + worldwideTemperatures.lastationType + 
+("<br>") + "Lowee: " + worldwideTemperatures.lowee + "&#176;F" + ", " + 
+worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanbox  + 
+"&#176;F" + ", " + worldwideTemperatures.leanboxType;
 
 var totalEpisodes = {};
 
@@ -94,5 +113,8 @@ totalEpisodes.sugarLifeAiredTotal = totalEpisodes.sugarLifeAired.textContent;
 totalEpisodes.totalSugarLifeAired = parseInt(totalEpisodes.sugarLifeAiredTotal.match(/(\d+)$/)[0], 10);
 
 totalEpisodes.episodesBehind = totalEpisodes.totalSugarLifeAired - totalEpisodes.currentEpisodesWatched;
-document.getElementById('episodesBehind').innerHTML = "<b>I am currently " + totalEpisodes.episodesBehind + " episodes behind!</b>";
-document.getElementById('totalEpisodes').innerHTML = "<b>Total episodes: " + totalEpisodes.happySugarLife +"</b";
+document.getElementById('episodesBehind').innerHTML = "<b>I am currently " + 
+totalEpisodes.episodesBehind + " episodes behind!</b>";
+document.getElementById('totalEpisodes').innerHTML = "<b>Total episodes: " + 
+totalEpisodes.happySugarLife +"</b";
+
