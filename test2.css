@@ -179,3 +179,7 @@ li.tc a:hover {
 .animeStats{
     display: inline;
 }
+
+.sugarLife a{
+    text-decoration: none;
+}
