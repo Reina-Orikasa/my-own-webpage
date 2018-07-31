@@ -113,8 +113,22 @@ totalEpisodes.sugarLifeAiredTotal = totalEpisodes.sugarLifeAired.textContent;
 totalEpisodes.totalSugarLifeAired = parseInt(totalEpisodes.sugarLifeAiredTotal.match(/(\d+)$/)[0], 10);
 
 totalEpisodes.episodesBehind = totalEpisodes.totalSugarLifeAired - totalEpisodes.currentEpisodesWatched;
-document.getElementById('episodesBehind').innerHTML = "<b>I am currently " + 
+
+if (totalEpisodes.episodesBehind === 0 ) { 
+    document.getElementById('episodesBehind').innerHTML = "<b>I am currently no episodes behind!</b>";    
+}
+
+else if (totalEpisodes.episodesBehind < 0){
+    document.getElementById('episodesBehind').innerHTML = "<b>I am from the future! I am " +
+    Math.abs(totalEpisodes.episodesBehind) + " episodes ahead!";
+}
+
+else {
+    document.getElementById('episodesBehind').innerHTML = "<b>I am currently " + 
 totalEpisodes.episodesBehind + " episodes behind!</b>";
+}
+
+
 document.getElementById('totalEpisodes').innerHTML = "<b>Total episodes: " + 
 totalEpisodes.happySugarLife +"</b";
 
