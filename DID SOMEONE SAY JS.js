@@ -130,5 +130,5 @@ totalEpisodes.episodesBehind + " episodes behind!</b>";
 
 
 document.getElementById('totalEpisodes').innerHTML = "<b>Total episodes: " + 
-totalEpisodes.happySugarLife +"</b";
+totalEpisodes.happySugarLife +"</b>";
 
