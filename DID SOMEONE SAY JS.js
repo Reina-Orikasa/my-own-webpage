@@ -6,7 +6,7 @@ displayTime.month = displayTime.time.getMonth() + 1;
 
 displayTime.day = displayTime.time.getDate();
 
-displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2);
+displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2); 
 
 displayTime.minute = ('0'+ displayTime.time.getMinutes()).slice(-2);
 
@@ -101,34 +101,35 @@ worldwideTemperatures.lastation + "&#176;F" +  ", " + worldwideTemperatures.last
 worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanbox  + 
 "&#176;F" + ", " + worldwideTemperatures.leanboxType;
 
-var totalEpisodes = {};
+var totalEpisodes = {}; //global container for anime stats. fun stuff.
 
+//beg. Happy Sugar Life
 totalEpisodes.happySugarLife = 12;
-totalEpisodes.watchedSugarLife = document.getElementById('currentlyWatched');
+totalEpisodes.watchedSugarLife = document.getElementById('currentlyWatchedSugarLife');
 totalEpisodes.watchedSugarLifeCurrent = totalEpisodes.watchedSugarLife.textContent;
-totalEpisodes.currentEpisodesWatched = parseInt(totalEpisodes.watchedSugarLifeCurrent.match(/(\d+)$/)[0], 10);
+totalEpisodes.currentEpisodesWatchedSL = parseInt(totalEpisodes.watchedSugarLifeCurrent.match(/(\d+)$/)[0], 10);
 
-totalEpisodes.sugarLifeAired = document.getElementById('currentlyAired');
+totalEpisodes.sugarLifeAired = document.getElementById('currentlyAiredSugarLife');
 totalEpisodes.sugarLifeAiredTotal = totalEpisodes.sugarLifeAired.textContent;
 totalEpisodes.totalSugarLifeAired = parseInt(totalEpisodes.sugarLifeAiredTotal.match(/(\d+)$/)[0], 10);
 
-totalEpisodes.episodesBehind = totalEpisodes.totalSugarLifeAired - totalEpisodes.currentEpisodesWatched;
+totalEpisodes.episodesBehindSL = totalEpisodes.totalSugarLifeAired - totalEpisodes.currentEpisodesWatchedSL;
 
 if (totalEpisodes.episodesBehind === 0 ) { 
-    document.getElementById('episodesBehind').innerHTML = "<b>I am currently no episodes behind!</b>";    
+    document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am currently no episodes behind!</b>";    
 }
 
 else if (totalEpisodes.episodesBehind < 0){
-    document.getElementById('episodesBehind').innerHTML = "<b>I am from the future! I am " +
-    Math.abs(totalEpisodes.episodesBehind) + " episodes ahead!";
+    document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am from the future! I am " +
+    Math.abs(totalEpisodes.episodesBehindSL) + " episodes ahead!";
 }
 
 else {
-    document.getElementById('episodesBehind').innerHTML = "<b>I am currently " + 
-totalEpisodes.episodesBehind + " episodes behind!</b>";
+    document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am currently " + 
+totalEpisodes.episodesBehindSL + " episodes behind!</b>";
 }
 
 
-document.getElementById('totalEpisodes').innerHTML = "<b>Total episodes: " + 
+document.getElementById('totalEpisodesSugarLife').innerHTML = "<b>Total episodes: " + 
 totalEpisodes.happySugarLife +"</b>";
 
