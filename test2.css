@@ -73,32 +73,7 @@ li.head a:hover {
 }
 
 
-@media screen and (max-width: 600px){
-    .flex-container, ul, li{
-        flex-direction: column;
-    }
 
-    .header{
-        background-image: none;
-        background-color: skyblue;
-    
-    }
-
-    .nepheader{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        align-self: center;
-    }
-
-    .container{
-        display: flex;
-    }
-
-    .nepneps{
-        font-size: 20px;
-    }
-}
 
 .titleheader{
     font-family: Arial, Helvetica, sans-serif;
@@ -178,8 +153,52 @@ li.tc a:hover {
 
 .animeStats{
     display: inline;
+    overflow: hidden;
 }
 
 .sugarLife a{
     text-decoration: none;
+}
+
+.sugarLifePhoto{
+    float: left;
+    padding-right: 15px;
+    max-height: 25%;
+}
+
+@media screen and (max-width: 800px){
+    .flex-container, ul, li{
+        flex-direction: column;
+    }
+
+    .header{
+        background-image: none;
+        background-color: skyblue;
+    
+    }
+
+    .nepheader{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        align-self: center;
+    }
+
+    .container{
+        display: flex;
+    }
+
+    .nepneps{
+        font-size: 20px;
+    }
+
+    .sugarLifePhoto{
+        float: none;
+        max-height: 1%;
+    }
+
+    .animeStats{
+        display: inline-block;
+        overflow: hidden;
+    }
 }
