@@ -156,14 +156,14 @@ li.tc a:hover {
     overflow: hidden;
 }
 
-.sugarLife a{
+.animeLinks a{
     text-decoration: none;
 }
 
-.sugarLifePhoto{
+.animePhoto{
     float: left;
     padding-right: 15px;
-    max-height: 25%;
+    max-height: 15%;
 }
 
 @media screen and (max-width: 800px){
@@ -192,9 +192,9 @@ li.tc a:hover {
         font-size: 20px;
     }
 
-    .sugarLifePhoto{
+    .animePhoto{
         float: none;
-        max-height: 1%;
+        max-height: 250px;
     }
 
     .animeStats{
