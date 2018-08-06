@@ -160,4 +160,4 @@ totalEpisodes.OngakuShoujoBehind + " episodes behind!</b>";
 
 
 document.getElementById('totalEpisodesOngakuShojo').innerHTML = "<b>Total episodes: " + 
-totalEpisodes.OngakuShoujoAired +"</b>";
+totalEpisodes.OngakuShoujo +"</b>";

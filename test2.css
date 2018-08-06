@@ -163,7 +163,7 @@ li.tc a:hover {
 .animePhoto{
     float: left;
     padding-right: 15px;
-    max-height: 15%;
+    max-height: 250px;
 }
 
 @media screen and (max-width: 800px){
