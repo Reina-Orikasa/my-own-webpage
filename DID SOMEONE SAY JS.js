@@ -11,8 +11,8 @@ displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2);
 displayTime.minute = ('0'+ displayTime.time.getMinutes()).slice(-2);
 
 document.getElementById('test').innerHTML = "Today's date is: " +
- displayTime.month + "/" + displayTime.day + ("<br>") + 
- "The time is: " + displayTime.hour + ":" + displayTime.minute;
+displayTime.month + "/" + displayTime.day + ("<br>") + 
+"The time is: " + displayTime.hour + ":" + displayTime.minute;
 
 window.worldwideTemperatures = {}; //global weather container
 
