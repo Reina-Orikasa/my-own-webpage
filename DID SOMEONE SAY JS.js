@@ -1,4 +1,4 @@
-var displayTime = {}; //global time container
+window.displayTime = {}; //global time container
 
 displayTime.time = new Date();
 
@@ -14,19 +14,27 @@ document.getElementById('test').innerHTML = "Today's date is: " +
  displayTime.month + "/" + displayTime.day + ("<br>") + 
  "The time is: " + displayTime.hour + ":" + displayTime.minute;
 
-var worldwideTemperatures = {}; //global weather container
+window.worldwideTemperatures = {}; //global weather container
 
 worldwideTemperatures.currentTime = displayTime.time;
 
 worldwideTemperatures.hour = displayTime.hour;
 
-worldwideTemperatures.planeptune = 0;
+worldwideTemperatures.planeptuneCelsius = 0;
 
-worldwideTemperatures.lastation = 0;
+worldwideTemperatures.lastationCelsius = 0;
 
-worldwideTemperatures.lowee = 0;
+worldwideTemperatures.loweeCelsius = 0;
 
-worldwideTemperatures.leanbox = 0;
+worldwideTemperatures.leanboxCelsius = 0;
+
+worldwideTemperatures.planeptuneFahrenheit = 0;
+
+worldwideTemperatures.lastationFahrenheit = 0;
+
+worldwideTemperatures.loweeFahrenheit = 0;
+
+worldwideTemperatures.leanboxFahrenheit = 0;
 
 worldwideTemperatures.planeptuneType = '';
 
@@ -42,10 +50,15 @@ worldwideTemperatures.loweeWeatherTypes = ['Sunny', 'Snow', 'Cloudy'];
 
 if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
 
-    worldwideTemperatures.planeptune = 55;
-    worldwideTemperatures.lastation = 71;
-    worldwideTemperatures.lowee = 22;
-    worldwideTemperatures.leanbox = 64;
+    worldwideTemperatures.planeptuneFahrenheit = 55;
+    worldwideTemperatures.lastationFahrenheit = 71;
+    worldwideTemperatures.loweeFahrenheit = 22;
+    worldwideTemperatures.leanboxFahrenheit = 64;
+
+    worldwideTemperatures.planeptuneCelsius = 13;
+    worldwideTemperatures.lastationCelsius = 22;
+    worldwideTemperatures.loweeCelsius = -6;
+    worldwideTemperatures.leanboxCelsius = 18;
 
     worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
         worldwideTemperatures.weatherTypes.length)];
@@ -59,10 +72,15 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
 }
 
 else if (worldwideTemperatures.hour >= 12 && worldwideTemperatures.hour <= 17){
-    worldwideTemperatures.planeptune = 72;
-    worldwideTemperatures.lastation = 85;
-    worldwideTemperatures.lowee = 35;
-    worldwideTemperatures.leanbox = 72;
+    worldwideTemperatures.planeptuneFahrenheit = 72;
+    worldwideTemperatures.lastationFahrenheit = 85;
+    worldwideTemperatures.loweeFahrenheit = 35;
+    worldwideTemperatures.leanboxFahrenheit = 72;
+
+    worldwideTemperatures.planeptuneCelsius = 22;
+    worldwideTemperatures.lastationCelsius = 29;
+    worldwideTemperatures.loweeCelsius = 2;
+    worldwideTemperatures.leanboxCelsius = 22;
 
     worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
         worldwideTemperatures.weatherTypes.length)];
@@ -78,10 +96,15 @@ else {
 
     //assumes you are not in any of the time ranges above
 
-    worldwideTemperatures.planeptune = 48;
-    worldwideTemperatures.lastation = 63;
-    worldwideTemperatures.lowee = 18;
-    worldwideTemperatures.leanbox = 54;
+    worldwideTemperatures.planeptuneFahrenheit = 48;
+    worldwideTemperatures.lastationFahrenheit = 63;
+    worldwideTemperatures.loweeFahrenheit = 18;
+    worldwideTemperatures.leanboxFahrenheit = 54;
+
+    worldwideTemperatures.planeptuneCelsius = 9;
+    worldwideTemperatures.lastationCelsius = 17;
+    worldwideTemperatures.loweeCelsius = -8;
+    worldwideTemperatures.leanboxCelsius = 12;
 
     worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
         worldwideTemperatures.weatherTypes.length)];
@@ -94,14 +117,35 @@ else {
 }
 
 document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + 
-worldwideTemperatures.planeptune + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") + 
+worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") + 
 ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " + 
-worldwideTemperatures.lastation + "&#176;F" +  ", " + worldwideTemperatures.lastationType + 
-("<br>") + "Lowee: " + worldwideTemperatures.lowee + "&#176;F" + ", " + 
-worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanbox  + 
+worldwideTemperatures.lastationFahrenheit + "&#176;F" +  ", " + worldwideTemperatures.lastationType + 
+("<br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + ", " + 
+worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit  + 
 "&#176;F" + ", " + worldwideTemperatures.leanboxType;
 
-var totalEpisodes = {}; //global container for anime stats. fun stuff.
+//this is where it gets fun
+worldwideTemperatures.celsius = function(){
+    document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + 
+    worldwideTemperatures.planeptuneCelsius + "&#176;C" + ", " + worldwideTemperatures.planeptuneType + ("<br>") + 
+    ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " + 
+    worldwideTemperatures.lastationCelsius + "&#176;C" +  ", " + worldwideTemperatures.lastationType + 
+    ("<br>") + "Lowee: " + worldwideTemperatures.loweeCelsius + "&#176;C" + ", " + 
+    worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxCelsius  + 
+    "&#176;C" + ", " + worldwideTemperatures.leanboxType;
+}
+
+worldwideTemperatures.fahrenheit = function(){
+    document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + 
+    worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") + 
+    ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " + 
+    worldwideTemperatures.lastationFahrenheit + "&#176;F" +  ", " + worldwideTemperatures.lastationType + 
+    ("<br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + ", " + 
+    worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit  + 
+    "&#176;F" + ", " + worldwideTemperatures.leanboxType;
+}
+
+window.totalEpisodes = {}; //global container for anime stats. fun stuff.
 
 //beg. Happy Sugar Life
 totalEpisodes.happySugarLife = 12;
@@ -160,4 +204,4 @@ totalEpisodes.OngakuShoujoBehind + " episodes behind!</b>";
 
 
 document.getElementById('totalEpisodesOngakuShojo').innerHTML = "<b>Total episodes: " + 
-totalEpisodes.OngakuShoujo +"</b>";
+totalEpisodes.OngakuShoujoAired +"</b>";
