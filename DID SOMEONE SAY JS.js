@@ -6,7 +6,7 @@ displayTime.month = displayTime.time.getMonth() + 1;
 
 displayTime.day = displayTime.time.getDate();
 
-displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2); 
+displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2);  //removes leading zero if needed
 
 displayTime.minute = ('0'+ displayTime.time.getMinutes()).slice(-2);
 
@@ -46,19 +46,29 @@ worldwideTemperatures.leanboxType = '';
 
 worldwideTemperatures.weatherTypes = ['Sunny', 'Rain', 'Cloudy'];
 
+worldwideTemperatures.weatherTypesNight = ['Clear', 'Rain', 'Cloudy'];
+
 worldwideTemperatures.loweeWeatherTypes = ['Sunny', 'Snow', 'Cloudy'];
+
+worldwideTemperatures.loweeWeatherTypesNight = ['Clear', 'Rain', 'Snow'];
 
 if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
 
-    worldwideTemperatures.planeptuneFahrenheit = 55;
-    worldwideTemperatures.lastationFahrenheit = 71;
-    worldwideTemperatures.loweeFahrenheit = 22;
-    worldwideTemperatures.leanboxFahrenheit = 64;
-
-    worldwideTemperatures.planeptuneCelsius = 13;
-    worldwideTemperatures.lastationCelsius = 22;
-    worldwideTemperatures.loweeCelsius = -6;
-    worldwideTemperatures.leanboxCelsius = 18;
+    worldwideTemperatures.world = function(min, max) {
+        max = Math.ceil(min);
+        min = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    } 
+    
+    worldwideTemperatures.planeptuneFahrenheit = worldwideTemperatures.world(55, 72);
+    worldwideTemperatures.lastationFahrenheit = worldwideTemperatures.world(62, 75);
+    worldwideTemperatures.loweeFahrenheit = worldwideTemperatures.world(11, 22);
+    worldwideTemperatures.leanboxFahrenheit = worldwideTemperatures.world(45, 70);
+    
+    worldwideTemperatures.planeptuneCelsius = worldwideTemperatures.world(13, 17);
+    worldwideTemperatures.lastationCelsius = worldwideTemperatures.world(17, 24);
+    worldwideTemperatures.loweeCelsius = worldwideTemperatures.world(-12, -6);
+    worldwideTemperatures.leanboxCelsius = worldwideTemperatures.world(7, 21);
 
     worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
         worldwideTemperatures.weatherTypes.length)];
@@ -72,15 +82,22 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
 }
 
 else if (worldwideTemperatures.hour >= 12 && worldwideTemperatures.hour <= 17){
-    worldwideTemperatures.planeptuneFahrenheit = 72;
-    worldwideTemperatures.lastationFahrenheit = 85;
-    worldwideTemperatures.loweeFahrenheit = 35;
-    worldwideTemperatures.leanboxFahrenheit = 72;
-
-    worldwideTemperatures.planeptuneCelsius = 22;
-    worldwideTemperatures.lastationCelsius = 29;
-    worldwideTemperatures.loweeCelsius = 2;
-    worldwideTemperatures.leanboxCelsius = 22;
+    
+    worldwideTemperatures.world = function(min, max) {
+        max = Math.ceil(min);
+        min = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    } 
+    
+    worldwideTemperatures.planeptuneFahrenheit = worldwideTemperatures.world(66, 87);
+    worldwideTemperatures.lastationFahrenheit = worldwideTemperatures.world(73, 91);
+    worldwideTemperatures.loweeFahrenheit = worldwideTemperatures.world(27, 35);
+    worldwideTemperatures.leanboxFahrenheit = worldwideTemperatures.world(65, 76);
+    
+    worldwideTemperatures.planeptuneCelsius = worldwideTemperatures.world(19, 31);
+    worldwideTemperatures.lastationCelsius = worldwideTemperatures.world(23, 35);
+    worldwideTemperatures.loweeCelsius = worldwideTemperatures.world(-3, 2);
+    worldwideTemperatures.leanboxCelsius = worldwideTemperatures.world(18, 24);
 
     worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
         worldwideTemperatures.weatherTypes.length)];
@@ -96,24 +113,30 @@ else {
 
     //assumes you are not in any of the time ranges above
 
-    worldwideTemperatures.planeptuneFahrenheit = 48;
-    worldwideTemperatures.lastationFahrenheit = 63;
-    worldwideTemperatures.loweeFahrenheit = 18;
-    worldwideTemperatures.leanboxFahrenheit = 54;
+    worldwideTemperatures.world = function(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    } 
+    
+    worldwideTemperatures.planeptuneFahrenheit = worldwideTemperatures.world(40, 52);
+    worldwideTemperatures.lastationFahrenheit = worldwideTemperatures.world(49, 58);
+    worldwideTemperatures.loweeFahrenheit = worldwideTemperatures.world(14, 22);
+    worldwideTemperatures.leanboxFahrenheit = worldwideTemperatures.world(52, 56);
+    
+    worldwideTemperatures.planeptuneCelsius = worldwideTemperatures.world(4, 11);
+    worldwideTemperatures.lastationCelsius = worldwideTemperatures.world(9, 11);
+    worldwideTemperatures.loweeCelsius = worldwideTemperatures.world(-10, -6);
+    worldwideTemperatures.leanboxCelsius = worldwideTemperatures.world(11, 16);
 
-    worldwideTemperatures.planeptuneCelsius = 9;
-    worldwideTemperatures.lastationCelsius = 17;
-    worldwideTemperatures.loweeCelsius = -8;
-    worldwideTemperatures.leanboxCelsius = 12;
-
-    worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
-        worldwideTemperatures.weatherTypes.length)];
-    worldwideTemperatures.lastationType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
-        worldwideTemperatures.weatherTypes.length)];
-    worldwideTemperatures.loweeType = worldwideTemperatures.loweeWeatherTypes[Math.floor(Math.random() *
-        worldwideTemperatures.loweeWeatherTypes.length)];
-    worldwideTemperatures.leanboxType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
-        worldwideTemperatures.weatherTypes.length)];
+    worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypesNight[Math.floor(Math.random() *
+    worldwideTemperatures.weatherTypesNight.length)];
+    worldwideTemperatures.lastationType = worldwideTemperatures.weatherTypesNight[Math.floor(Math.random() *
+    worldwideTemperatures.weatherTypesNight.length)];
+    worldwideTemperatures.loweeType = worldwideTemperatures.loweeWeatherTypesNight[Math.floor(Math.random() *
+    worldwideTemperatures.loweeWeatherTypesNight.length)];
+    worldwideTemperatures.leanboxType = worldwideTemperatures.weatherTypesNight[Math.floor(Math.random() *
+    worldwideTemperatures.weatherTypesNight.length)];
 }
 
 document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + 
@@ -125,7 +148,7 @@ worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures
 "&#176;F" + ", " + worldwideTemperatures.leanboxType;
 
 //this is where it gets fun
-worldwideTemperatures.celsius = function(){
+worldwideTemperatures.celsius = function() {
     document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + 
     worldwideTemperatures.planeptuneCelsius + "&#176;C" + ", " + worldwideTemperatures.planeptuneType + ("<br>") + 
     ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " + 
@@ -135,7 +158,7 @@ worldwideTemperatures.celsius = function(){
     "&#176;C" + ", " + worldwideTemperatures.leanboxType;
 }
 
-worldwideTemperatures.fahrenheit = function(){
+worldwideTemperatures.fahrenheit = function() {
     document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " + 
     worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") + 
     ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " + 
@@ -163,7 +186,7 @@ if (totalEpisodes.episodesBehindSL === 0 ) {
     document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am currently no episodes behind!</b>";    
 }
 
-else if (totalEpisodes.episodesBehindSL < 0){
+else if (totalEpisodes.episodesBehindSL < 0) {
     document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am from the future! I am " +
     Math.abs(totalEpisodes.episodesBehindSL) + " episodes ahead!";
 }
@@ -192,7 +215,7 @@ if (totalEpisodes.OngakuShoujoBehind === 0 ) {
     document.getElementById('episodesBehindOngakuShoujo').innerHTML = "<b>I am currently no episodes behind!</b>";    
 }
 
-else if (totalEpisodes.OngakuShoujoBehind < 0){
+else if (totalEpisodes.OngakuShoujoBehind < 0) {
     document.getElementById('episodesBehindOngakuShoujo').innerHTML = "<b>I am from the future! I am " +
     Math.abs(totalEpisodes.OngakuShoujoBehind) + " episodes ahead!";
 }
@@ -202,6 +225,5 @@ else {
 totalEpisodes.OngakuShoujoBehind + " episodes behind!</b>";
 }
 
-
 document.getElementById('totalEpisodesOngakuShojo').innerHTML = "<b>Total episodes: " + 
-totalEpisodes.OngakuShoujo +"</b>";
+totalEpisodes.OngakuShoujoAired +"</b>";
