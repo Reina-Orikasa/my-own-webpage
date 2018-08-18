@@ -59,16 +59,21 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
         min = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
     } 
+
+    worldwideTemperatures.celsiusConversion = function(fahrenheitTemperature) {
+        weatherFormula = Math.round((fahrenheitTemperature - 32) * (5 / 9));
+        return weatherFormula 
+    }
     
     worldwideTemperatures.planeptuneFahrenheit = worldwideTemperatures.world(55, 72);
     worldwideTemperatures.lastationFahrenheit = worldwideTemperatures.world(62, 75);
     worldwideTemperatures.loweeFahrenheit = worldwideTemperatures.world(11, 22);
     worldwideTemperatures.leanboxFahrenheit = worldwideTemperatures.world(45, 70);
     
-    worldwideTemperatures.planeptuneCelsius = worldwideTemperatures.world(13, 17);
-    worldwideTemperatures.lastationCelsius = worldwideTemperatures.world(17, 24);
-    worldwideTemperatures.loweeCelsius = worldwideTemperatures.world(-12, -6);
-    worldwideTemperatures.leanboxCelsius = worldwideTemperatures.world(7, 21);
+    worldwideTemperatures.planeptuneCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.planeptuneFahrenheit)
+    worldwideTemperatures.lastationCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.lastationFahrenheit)
+    worldwideTemperatures.loweeCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.loweeFahrenheit)
+    worldwideTemperatures.leanboxCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.leanboxFahrenheit)
 
     worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
         worldwideTemperatures.weatherTypes.length)];
@@ -81,7 +86,7 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
 
 }
 
-else if (worldwideTemperatures.hour >= 12 && worldwideTemperatures.hour <= 17){
+else if (worldwideTemperatures.hour >= 12 && worldwideTemperatures.hour <= 20) {
     
     worldwideTemperatures.world = function(min, max) {
         max = Math.ceil(min);
@@ -89,15 +94,20 @@ else if (worldwideTemperatures.hour >= 12 && worldwideTemperatures.hour <= 17){
         return Math.floor(Math.random() * (max - min)) + min;
     } 
     
+    worldwideTemperatures.celsiusConversion = function(fahrenheitTemperature) {
+        weatherFormula = Math.round((fahrenheitTemperature - 32) * (5 / 9));
+        return weatherFormula 
+    }
+
     worldwideTemperatures.planeptuneFahrenheit = worldwideTemperatures.world(66, 87);
     worldwideTemperatures.lastationFahrenheit = worldwideTemperatures.world(73, 91);
     worldwideTemperatures.loweeFahrenheit = worldwideTemperatures.world(27, 35);
     worldwideTemperatures.leanboxFahrenheit = worldwideTemperatures.world(65, 76);
     
-    worldwideTemperatures.planeptuneCelsius = worldwideTemperatures.world(19, 31);
-    worldwideTemperatures.lastationCelsius = worldwideTemperatures.world(23, 35);
-    worldwideTemperatures.loweeCelsius = worldwideTemperatures.world(-3, 2);
-    worldwideTemperatures.leanboxCelsius = worldwideTemperatures.world(18, 24);
+    worldwideTemperatures.planeptuneCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.planeptuneFahrenheit)
+    worldwideTemperatures.lastationCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.lastationFahrenheit)
+    worldwideTemperatures.loweeCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.loweeFahrenheit)
+    worldwideTemperatures.leanboxCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.leanboxFahrenheit)
 
     worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
         worldwideTemperatures.weatherTypes.length)];
@@ -118,16 +128,21 @@ else {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
     } 
+
+    worldwideTemperatures.celsiusConversion = function(fahrenheitTemperature) {
+        weatherFormula = Math.round((fahrenheitTemperature - 32) * (5 / 9));
+        return weatherFormula 
+    }
     
     worldwideTemperatures.planeptuneFahrenheit = worldwideTemperatures.world(40, 52);
     worldwideTemperatures.lastationFahrenheit = worldwideTemperatures.world(49, 58);
     worldwideTemperatures.loweeFahrenheit = worldwideTemperatures.world(14, 22);
     worldwideTemperatures.leanboxFahrenheit = worldwideTemperatures.world(52, 56);
     
-    worldwideTemperatures.planeptuneCelsius = worldwideTemperatures.world(4, 11);
-    worldwideTemperatures.lastationCelsius = worldwideTemperatures.world(9, 11);
-    worldwideTemperatures.loweeCelsius = worldwideTemperatures.world(-10, -6);
-    worldwideTemperatures.leanboxCelsius = worldwideTemperatures.world(11, 16);
+    worldwideTemperatures.planeptuneCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.planeptuneFahrenheit)
+    worldwideTemperatures.lastationCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.lastationFahrenheit)
+    worldwideTemperatures.loweeCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.loweeFahrenheit)
+    worldwideTemperatures.leanboxCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.leanboxFahrenheit)
 
     worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypesNight[Math.floor(Math.random() *
     worldwideTemperatures.weatherTypesNight.length)];
