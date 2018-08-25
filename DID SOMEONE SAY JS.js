@@ -206,16 +206,21 @@ else if (totalEpisodes.episodesBehindSL < 0) {
     Math.abs(totalEpisodes.episodesBehindSL) + " episodes ahead!";
 }
 
+else if (totalEpisodes.episodesBehindSL === 1) {
+    document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am currently " + 
+    totalEpisodes.episodesBehindSL + " episode behind!</b>";
+} 
+
 else {
     document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am currently " + 
-totalEpisodes.episodesBehindSL + " episodes behind!</b>";
+    totalEpisodes.episodesBehindSL + " episodes behind!</b>";
 }
 
 
 document.getElementById('totalEpisodesSugarLife').innerHTML = "<b>Total episodes: " + 
 totalEpisodes.happySugarLife +"</b>";
 
-totalEpisodes.OngakuShoujo = 12;
+/*totalEpisodes.OngakuShoujo = 12;
 totalEpisodes.OngakuShoujoFromHtml = document.getElementById('currentlyWatchedOngakuShoujo');
 totalEpisodes.OngakuShoujoFromText = totalEpisodes.OngakuShoujoFromHtml.textContent;
 totalEpisodes.OngakuShoujoWatched = parseInt(totalEpisodes.OngakuShoujoFromText.match(/(\d+)$/)[0], 10);
@@ -240,5 +245,41 @@ else {
 totalEpisodes.OngakuShoujoBehind + " episodes behind!</b>";
 }
 
+
 document.getElementById('totalEpisodesOngakuShojo').innerHTML = "<b>Total episodes: " + 
-totalEpisodes.OngakuShoujoAired +"</b>";
+totalEpisodes.OngakuShoujoAired + "</b>";
+
+*/
+
+// entry for High Score Girl
+totalEpisodes.HighScoreGirl = "Unknown at the moment"
+totalEpisodes.HighScoreGirlFromHtml = document.getElementById('currentlyWatchedHighScoreGirl');
+totalEpisodes.HighScoreGirlFromText = totalEpisodes.HighScoreGirlFromHtml.textContent;
+totalEpisodes.HighScoreGirlWatched = parseInt(totalEpisodes.HighScoreGirlFromText.match(/(\d+)$/)[0], 10);
+
+totalEpisodes.HighScoreGirlAiredHtml = document.getElementById('currentlyAiredHighScoreGirl');
+totalEpisodes.HighScoreGirlAiredText = totalEpisodes.HighScoreGirlAiredHtml.textContent;
+totalEpisodes.HighScoreGirlAired = parseInt(totalEpisodes.HighScoreGirlAiredText.match(/(\d+)$/)[0], 10);
+
+totalEpisodes.HighScoreGirlBehind = totalEpisodes.HighScoreGirlAired - totalEpisodes.HighScoreGirlWatched;
+
+if (totalEpisodes.HighScoreGirlBehind === 0 ) {
+    document.getElementById('episodesBehindHighScoreGirl').innerHTML = "<b>I am currently no episodes behind!</b>";
+}
+
+else if (totalEpisodes.HighScoreGirlBehind < 0) {
+    document.getElementById('episodesBehindHighScoreGirl').innerHTML = "<b>I am from the future! I am " +
+    Math.abs(totalEpisodes.HighScoreGirlBehind) + " episodes ahead!";
+}
+
+else if (totalEpisodes.HighScoreGirlBehind === 1) {
+    document.getElementById('episodesBehindHighScoreGirl').innerHTML = "<b>I am currently " + 
+    totalEpisodes.HighScoreGirlBehind + " episode behind!</b>";
+} 
+
+else {
+    document.getElementById('episodesBehindHighScoreGirl').innerHTML = "<b>I am currently " + 
+    totalEpisodes.HighScoreGirlBehind + " episodes behind!</b>";
+}
+
+document.getElementById('totalEpisodesHighScoreGirl').innerHTML = "<b>Total episodes: " + totalEpisodes.HighScoreGirl + "</b>";
