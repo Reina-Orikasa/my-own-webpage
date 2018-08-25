@@ -1,3 +1,6 @@
+// HUGE thank you to noazark on GitHub for the code!
+// https://github.com/noazark/weather
+
 var isModule = typeof module !== "undefined" && module.exports;
 
 if (isModule) {
@@ -188,7 +191,7 @@ Weather.Current.prototype.conditions = function () {
 if (isModule) { module.exports = Weather; }
 else { window.Weather = Weather; }
 
-Weather.setApiKey("5fcfc4d071670bda492cb4cfb5dc4195");
+Weather.setApiKey("5fcfc4d071670bda492cb4cfb5dc4195"); // free throwaway account don't even bother
 
 Weather.getCurrent("Seattle", function(current) {
   var seattleWeather = ["Seattle Currently:",current.temperature(),"and",current.conditions()].join(" ");
