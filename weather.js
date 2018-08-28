@@ -1,51 +1,3 @@
-var xhr = new XMLHttpRequest();
-
-xhr.open("GET","https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%202490383&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",true);
-xhr.send(); 
- 
-xhr.onreadystatechange = function() {
-  if(xhr.readyState == 4 && xhr.status == 200){ 
-	
-  var w = JSON.parse(xhr.responseText);
-
-  document.getElementById('SeattleWeatherFahrenheit').innerHTML = "Seattle: " + w.query.results.channel.item.condition.temp + "&#176;F, " +
-  w.query.results.channel.item.condition.text;
-  
-  }; 
-};
-
-var xhr1 = new XMLHttpRequest();
-
-xhr1.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%201118370&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", true);
-xhr1.send();
-
-xhr1.onreadystatechange = function() {
-  if (xhr1.readyState == 4 && xhr.status == 200) {
-
-    var tokyoWeather = JSON.parse(xhr1.responseText);
-
-    document.getElementById('TokyoWeatherFahrenheit').innerHTML = "Tokyo: " + tokyoWeather.query.results.channel.item.condition.temp + "&#176;F, " +
-    tokyoWeather.query.results.channel.item.condition.text;
-  };
-};
-
-var xhr2 = new XMLHttpRequest();
-
-xhr2.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%20615702&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", true);
-xhr2.send();
-
-xhr2.onreadystatechange = function() {
-  if (xhr2.readyState == 4 && xhr.status == 200) {
-    
-    var parisWeather = JSON.parse(xhr2.responseText);
-
-    document.getElementById('parisWeatherFahrenheit').innerHTML = "Paris: " + parisWeather.query.results.channel.item.condition.temp + "&#176;F, " +
-    parisWeather.query.results.channel.item.condition.text;
-  };
-};
- 
-
-
 window.displayTime = {}; //global time container
 
 displayTime.time = new Date();
@@ -59,8 +11,8 @@ displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2); //removes lead
 displayTime.minute = ('0' + displayTime.time.getMinutes()).slice(-2);
 
 document.getElementById('test').innerHTML = "Today's date is: " +
-  displayTime.month + "/" + displayTime.day + ("<br>") +
-  "The time is: " + displayTime.hour + ":" + displayTime.minute;
+displayTime.month + "/" + displayTime.day + ("<br>") +
+"The time is: " + displayTime.hour + ":" + displayTime.minute;
 
 window.worldwideTemperatures = {}; //global weather container
 
@@ -315,3 +267,25 @@ if (totalEpisodes.HighScoreGirlBehind === 0) {
 }
 
 document.getElementById('totalEpisodesHighScoreGirl').innerHTML = "<b>Total episodes: " + totalEpisodes.HighScoreGirl + "</b>";
+
+function callAjax(url, city){
+  var xmlhttp;
+  // compatible with IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function(){
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+          var w = JSON.parse(xmlhttp.responseText);
+
+          document.getElementById(city + 'WeatherFahrenheit').innerHTML = city + ": " + w.query.results.channel.item.condition.temp + "&#176;F, " +
+          w.query.results.channel.item.condition.text;
+      }
+  }
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+
+callAjax("https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%202490383&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "Seattle");
+callAjax("https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%20615702&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "Paris");
+callAjax("https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%201118370&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", "Tokyo");
+
+
