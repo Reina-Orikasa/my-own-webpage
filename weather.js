@@ -1,6 +1,6 @@
 var xhr = new XMLHttpRequest();
 
-xhr.open("GET","https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22seattle%2Cwase%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",true);
+xhr.open("GET","https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%202490383&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",true);
 xhr.send(); 
  
 xhr.onreadystatechange = function() {
@@ -16,7 +16,7 @@ xhr.onreadystatechange = function() {
 
 var xhr1 = new XMLHttpRequest();
 
-xhr1.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22TOKYO%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", true);
+xhr1.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%201118370&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", true);
 xhr1.send();
 
 xhr1.onreadystatechange = function() {
@@ -31,7 +31,7 @@ xhr1.onreadystatechange = function() {
 
 var xhr2 = new XMLHttpRequest();
 
-xhr2.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22paris%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", true);
+xhr2.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%20615702&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", true);
 xhr2.send();
 
 xhr2.onreadystatechange = function() {
