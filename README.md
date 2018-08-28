@@ -1,3 +1,8 @@
-# HTML Fun
+# Welcome
 
-Learning fun new things!
+# What?
+Just a fun side project for the summer.
+
+# Why?
+Learning new things is fun.
+
