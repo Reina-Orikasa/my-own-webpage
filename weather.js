@@ -1,8 +1,8 @@
-function callAjax(url, city){
+function callAjax(url, city) {
   var xmlhttp;
   // compatible with IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function(){
+  xmlhttp.onreadystatechange = function() {
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
           var w = JSON.parse(xmlhttp.responseText);
 
