@@ -1,15 +1,16 @@
+// Sets the framework for AJAX calls
 function callAjax(url, callback) {
   var xmlhttp;
   // compatible with IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-          var w = JSON.parse(xmlhttp.responseText);
-
+          var w = JSON.parse(xmlhttp.responseText); //pharse json response
+          //callback variables
           var weather = w.query.results.channel.item.condition.temp
 
           var textConditions = w.query.results.channel.item.condition.text
-          
+          // callback for async 
           callback(weather, textConditions);
       }
   }
@@ -17,11 +18,11 @@ function callAjax(url, callback) {
   xmlhttp.send();
 }
 
+// AJAX calls to Yahoo! Weather API + callback function
 callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from
 %20weather.forecast%20where%20woeid%20%3D%202490383&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions) {
 seattleWeather(weather, textConditions);
 });
-
 
 callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast
 %20where%20woeid%20%3D%20615702&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions) {
@@ -34,15 +35,15 @@ callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20
 
 window.displayTime = {}; //global time container
 
-displayTime.time = new Date();
+displayTime.time = new Date(); 
 
-displayTime.month = displayTime.time.getMonth() + 1;
+displayTime.month = displayTime.time.getMonth() + 1; // since arrays start at 0 
 
 displayTime.day = displayTime.time.getDate();
 
 displayTime.hour = ('0' + displayTime.time.getHours()).slice(-2); //removes leading zero if needed
 
-displayTime.minute = ('0' + displayTime.time.getMinutes()).slice(-2);
+displayTime.minute = ('0' + displayTime.time.getMinutes()).slice(-2); //removes leading zero if needed
 
 document.getElementById('test').innerHTML = "Today's date is: " +
 displayTime.month + "/" + displayTime.day + ("<br>") +
@@ -70,6 +71,7 @@ worldwideTemperatures.loweeFahrenheit = 0;
 
 worldwideTemperatures.leanboxFahrenheit = 0;
 
+//callback functions
 function seattleWeather(temp, description) {
   seattleWeatherFahrenheit = temp;
   seattleWeatherDescription = description;
@@ -78,12 +80,12 @@ function seattleWeather(temp, description) {
 
   worldwideTemperatures.SeattleFahrenheitHtml = document.getElementById("SeattleWeatherFahrenheit");
   worldwideTemperatures.SeattleFahrenheitText = worldwideTemperatures.SeattleFahrenheitHtml.textContent;
-  worldwideTemperatures.SeattleFahrenheitParse = worldwideTemperatures.SeattleFahrenheitText.replace(/[^0-9]/g, '');
-  worldwideTemperatures.SeattleFahrenheit = Number(worldwideTemperatures.SeattleFahrenheitParse);
+  worldwideTemperatures.SeattleFahrenheitParse = worldwideTemperatures.SeattleFahrenheitText.replace(/[^0-9]/g, ''); // removes letters from string
+  worldwideTemperatures.SeattleFahrenheit = Number(worldwideTemperatures.SeattleFahrenheitParse); // changes string number to int number
 
-  worldwideTemperatures.SeattleCelsius = Math.round((worldwideTemperatures.SeattleFahrenheit - 32) * (5 / 9));
+  worldwideTemperatures.SeattleCelsius = Math.round((worldwideTemperatures.SeattleFahrenheit - 32) * (5 / 9)); // converts to celsius
 
-  worldwideTemperatures.seattleWeatherDescription = seattleWeatherDescription;
+  worldwideTemperatures.seattleWeatherDescription = seattleWeatherDescription; // sets weather description for later use 
 
 }
 
@@ -119,28 +121,7 @@ function parisWeather(temp, description) {
   worldwideTemperatures.parisWeatherDescription = parisWeatherDescription;
 }
 
-worldwideTemperatures.SeattleFahrenheitHtml = document.getElementById("SeattleWeatherFahrenheit");
-worldwideTemperatures.SeattleFahrenheitText = worldwideTemperatures.SeattleFahrenheitHtml.textContent;
-console.log(worldwideTemperatures.SeattleFahrenheitText);
-worldwideTemperatures.SeattleFahrenheitParse = worldwideTemperatures.SeattleFahrenheitText.replace(/[^0-9]/g, '');
-worldwideTemperatures.SeattleFahrenheit = Number(worldwideTemperatures.SeattleFahrenheitParse);
-
-worldwideTemperatures.TokyoFahrenheitHtml = document.getElementById("TokyoWeatherFahrenheit");
-worldwideTemperatures.TokyoFahrenheitText = worldwideTemperatures.TokyoFahrenheitHtml.textContent;
-worldwideTemperatures.TokyoFahrenheitParse = worldwideTemperatures.TokyoFahrenheitText.replace(/[^0-9]/g, '');
-worldwideTemperatures.TokyoFahrenheit = Number(worldwideTemperatures.TokyoFahrenheitParse);
-
-worldwideTemperatures.ParisFahrenheitHtml = document.getElementById("ParisWeatherFahrenheit");
-worldwideTemperatures.ParisFahrenheitText = worldwideTemperatures.ParisFahrenheitHtml.textContent;
-worldwideTemperatures.ParisFahrenheitParse = worldwideTemperatures.ParisFahrenheitText.replace(/[^0-9]/g, '');
-worldwideTemperatures.ParisFahrenheit = Number(worldwideTemperatures.ParisFahrenheitParse);
-
-worldwideTemperatures.SeattleCelsius = 0;
-
-worldwideTemperatures.TokyoCelsius = 0;
-
-worldwideTemperatures.ParisCelsius = 0
-
+//weather types for Gamindustri
 worldwideTemperatures.planeptuneType = '';
 
 worldwideTemperatures.lastationType = '';
@@ -149,15 +130,16 @@ worldwideTemperatures.loweeType = '';
 
 worldwideTemperatures.leanboxType = '';
 
-worldwideTemperatures.weatherTypes = ['Sunny', 'Rain', 'Cloudy'];
+worldwideTemperatures.weatherTypes = ['Sunny', 'Rain', 'Cloudy', 'Partly Cloudy', 'Mostly Cloudy', 'Thunderstorms', 'Scattered Thunderstorms'];
 
-worldwideTemperatures.weatherTypesNight = ['Clear', 'Rain', 'Cloudy'];
+worldwideTemperatures.weatherTypesNight = ['Sunny', 'Rain', 'Cloudy', 'Partly Cloudy', 'Mostly Cloudy', 'Thunderstorms', 'Scattered Thunderstorms'];
 
-worldwideTemperatures.loweeWeatherTypes = ['Sunny', 'Snow', 'Cloudy'];
+// special weather types for Lowee, the land of white snow
+worldwideTemperatures.loweeWeatherTypes = ['Sunny', 'Snow', 'Cloudy', 'Partly Cloudy', 'Mostly Cloudy'];
 
-worldwideTemperatures.loweeWeatherTypesNight = ['Clear', 'Rain', 'Snow'];
+worldwideTemperatures.loweeWeatherTypesNight = ['Clear', 'Cloudy', 'Snow', 'Partly Cloudy', 'Mostly Cloudy'];
 
-if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
+if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) { // assumes you are in the 8AM - 11:59AM time
 
   worldwideTemperatures.world = function(min, max) {
     max = Math.ceil(min);
@@ -165,7 +147,7 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  worldwideTemperatures.celsiusConversion = function(fahrenheitTemperature) {
+  worldwideTemperatures.celsiusConversion = function(fahrenheitTemperature) { // celsius conversion for non Fahrenheit users
     weatherFormula = Math.round((fahrenheitTemperature - 32) * (5 / 9));
     return weatherFormula
   }
@@ -180,10 +162,6 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
   worldwideTemperatures.loweeCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.loweeFahrenheit);
   worldwideTemperatures.leanboxCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.leanboxFahrenheit);
 
-  worldwideTemperatures.SeattleCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.SeattleFahrenheit);
-  worldwideTemperatures.TokyoCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.TokyoFahrenheit);
-  worldwideTemperatures.ParisCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.ParisFahrenheit);
-
   worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
     worldwideTemperatures.weatherTypes.length)];
   worldwideTemperatures.lastationType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
@@ -193,7 +171,7 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
   worldwideTemperatures.leanboxType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
     worldwideTemperatures.weatherTypes.length)];
 
-} else if (worldwideTemperatures.hour >= 12 && worldwideTemperatures.hour <= 20) {
+} else if (worldwideTemperatures.hour >= 12 && worldwideTemperatures.hour <= 20) { // assumes you are in the 12PM - 8PM time
 
   worldwideTemperatures.world = function(min, max) {
     max = Math.ceil(min);
@@ -215,10 +193,6 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
   worldwideTemperatures.lastationCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.lastationFahrenheit)
   worldwideTemperatures.loweeCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.loweeFahrenheit)
   worldwideTemperatures.leanboxCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.leanboxFahrenheit)
-
-  worldwideTemperatures.SeattleCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.SeattleFahrenheit);
-  worldwideTemperatures.TokyoCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.TokyoFahrenheit);
-  worldwideTemperatures.ParisCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.ParisFahrenheit);
 
   worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypes[Math.floor(Math.random() *
     worldwideTemperatures.weatherTypes.length)];
@@ -253,10 +227,6 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
   worldwideTemperatures.loweeCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.loweeFahrenheit)
   worldwideTemperatures.leanboxCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.leanboxFahrenheit)
 
-  worldwideTemperatures.SeattleCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.SeattleFahrenheit);
-  worldwideTemperatures.TokyoCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.TokyoFahrenheit);
-  worldwideTemperatures.ParisCelsius = worldwideTemperatures.celsiusConversion(worldwideTemperatures.ParisFahrenheit);
-
   worldwideTemperatures.planeptuneType = worldwideTemperatures.weatherTypesNight[Math.floor(Math.random() *
     worldwideTemperatures.weatherTypesNight.length)];
   worldwideTemperatures.lastationType = worldwideTemperatures.weatherTypesNight[Math.floor(Math.random() *
@@ -269,7 +239,7 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) {
 
 document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " +
 worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
-("<br>") + "Elsewhere in Gamindustri" + ("<br>") + ("<br>") + "Lastation: " +
+("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " +
 worldwideTemperatures.lastationFahrenheit + "&#176;F" + ", " + worldwideTemperatures.lastationType +
 ("<br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + ", " +
 worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit +
@@ -279,7 +249,7 @@ worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures
 worldwideTemperatures.celsius = function() {
   document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " +
   worldwideTemperatures.planeptuneCelsius + "&#176;C" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
-  ("<br>") + "Elsewhere in Gamindustri" + ("<br>") + ("<br>") + "Lastation: " +
+  ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " +
   worldwideTemperatures.lastationCelsius + "&#176;C" + ", " + worldwideTemperatures.lastationType +
   ("<br>") + "Lowee: " + worldwideTemperatures.loweeCelsius + "&#176;C" + ", " +
   worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxCelsius +
@@ -296,7 +266,7 @@ worldwideTemperatures.celsius = function() {
 worldwideTemperatures.fahrenheit = function() {
   document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " +
   worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
-  ("<br>") + "Elsewhere in Gamindustri" + ("<br>") + ("<br>") + "Lastation: " +
+  ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " +
   worldwideTemperatures.lastationFahrenheit + "&#176;F" + ", " + worldwideTemperatures.lastationType +
   ("<br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + ", " +
   worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit +
