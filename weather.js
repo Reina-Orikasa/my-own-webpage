@@ -26,11 +26,11 @@ seattleWeather(weather, textConditions);
 
 callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast
 %20where%20woeid%20%3D%20615702&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions) {
-  tokyoWeather(weather, textConditions);
+  parisWeather(weather, textConditions);
 });
 callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where
 %20woeid%20%3D%201118370&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions) {
-  parisWeather(weather, textConditions);
+  tokyoWeather(weather, textConditions);
 });
 
 window.displayTime = {}; //global time container
