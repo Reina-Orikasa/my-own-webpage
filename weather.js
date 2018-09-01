@@ -239,7 +239,7 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) { // ass
 
 document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " +
 worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
-("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " +
+("<br>") + "Elsewhere in Gamindustri" + ("<br>") + ("<br>") + "Lastation: " +
 worldwideTemperatures.lastationFahrenheit + "&#176;F" + ", " + worldwideTemperatures.lastationType +
 ("<br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + ", " +
 worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit +
@@ -249,7 +249,7 @@ worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures
 worldwideTemperatures.celsius = function() {
   document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " +
   worldwideTemperatures.planeptuneCelsius + "&#176;C" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
-  ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " +
+  ("<br>") + "Elsewhere in Gamindustri" + ("<br>") + ("<br>") + "Lastation: " +
   worldwideTemperatures.lastationCelsius + "&#176;C" + ", " + worldwideTemperatures.lastationType +
   ("<br>") + "Lowee: " + worldwideTemperatures.loweeCelsius + "&#176;C" + ", " +
   worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxCelsius +
@@ -266,7 +266,7 @@ worldwideTemperatures.celsius = function() {
 worldwideTemperatures.fahrenheit = function() {
   document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " +
   worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
-  ("<br>") + "Elsewhere in Gameindustri" + ("<br>") + ("<br>") + "Lastation: " +
+  ("<br>") + "Elsewhere in Gamindustri" + ("<br>") + ("<br>") + "Lastation: " +
   worldwideTemperatures.lastationFahrenheit + "&#176;F" + ", " + worldwideTemperatures.lastationType +
   ("<br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + ", " +
   worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit +
