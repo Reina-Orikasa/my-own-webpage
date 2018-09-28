@@ -7,11 +7,13 @@ function callAjax(url, callback) {
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
           var w = JSON.parse(xmlhttp.responseText); //pharse json response
           //callback variables
-          var weather = w.query.results.channel.item.condition.temp
+          var weather = w.query.results.channel.item.condition.temp; // weather variable
 
-          var textConditions = w.query.results.channel.item.condition.text
+          var textConditions = w.query.results.channel.item.condition.text; // current conditions
+
+          var timeUpdated = w.query.results.channel.item.condition.date; // last updated time
           // callback for async 
-          callback(weather, textConditions);
+          callback(weather, textConditions, timeUpdated);
       }
   }
   xmlhttp.open("GET", url, true);
@@ -20,17 +22,17 @@ function callAjax(url, callback) {
 
 // AJAX calls to Yahoo! Weather API + callback function
 callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from
-%20weather.forecast%20where%20woeid%20%3D%202490383&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions) {
-seattleWeather(weather, textConditions);
+%20weather.forecast%20where%20woeid%20%3D%202490383&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions, timeUpdated) {
+seattleWeather(weather, textConditions, timeUpdated);
 });
 
 callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast
-%20where%20woeid%20%3D%20615702&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions) {
-  parisWeather(weather, textConditions);
+%20where%20woeid%20%3D%20615702&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions, timeUpdated) {
+  parisWeather(weather, textConditions, timeUpdated);
 });
 callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where
-%20woeid%20%3D%201118370&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions) {
-  tokyoWeather(weather, textConditions);
+%20woeid%20%3D%201118370&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions, timeUpdated) {
+  tokyoWeather(weather, textConditions, timeUpdated);
 });
 
 window.displayTime = {}; //global time container
@@ -72,11 +74,13 @@ worldwideTemperatures.loweeFahrenheit = 0;
 worldwideTemperatures.leanboxFahrenheit = 0;
 
 //callback functions
-function seattleWeather(temp, description) {
+function seattleWeather(temp, description, updated) {
   seattleWeatherFahrenheit = temp;
   seattleWeatherDescription = description;
+  seattleWeatherTimeUpdated = updated;
 
   document.getElementById("SeattleWeatherFahrenheit").innerHTML = "Seattle: " + seattleWeatherFahrenheit + "&#176;F, " + seattleWeatherDescription;
+  document.getElementById("SeattleTimeUpdated").innerHTML = "Last updated: " + seattleWeatherTimeUpdated;
 
   worldwideTemperatures.SeattleFahrenheitHtml = document.getElementById("SeattleWeatherFahrenheit");
   worldwideTemperatures.SeattleFahrenheitText = worldwideTemperatures.SeattleFahrenheitHtml.textContent;
@@ -89,11 +93,13 @@ function seattleWeather(temp, description) {
 
 }
 
-function tokyoWeather(temp, description) {
+function tokyoWeather(temp, description, updated) {
   tokyoWeatherFahrenheit = temp;
   tokyoWeatherDescription = description;
+  tokyoWeatherTimeUpdated = updated;
 
   document.getElementById("TokyoWeatherFahrenheit").innerHTML = "Tokyo: " + tokyoWeatherFahrenheit + "&#176;F, " + tokyoWeatherDescription;
+  document.getElementById("TokyoTimeUpdated").innerHTML = "Last updated: " + tokyoWeatherTimeUpdated;
 
   worldwideTemperatures.TokyoFahrenheitHtml = document.getElementById("TokyoWeatherFahrenheit");
   worldwideTemperatures.TokyoFahrenheitText = worldwideTemperatures.TokyoFahrenheitHtml.textContent;
@@ -105,11 +111,13 @@ function tokyoWeather(temp, description) {
   worldwideTemperatures.tokyoWeatherDescription = tokyoWeatherDescription;
 }
 
-function parisWeather(temp, description) {
+function parisWeather(temp, description, updated) {
   parisWeatherFahrenheit = temp;
   parisWeatherDescription = description;
+  parisWeatherTimeUpdated = updated;
 
   document.getElementById("ParisWeatherFahrenheit").innerHTML = "Paris: " + parisWeatherFahrenheit + "&#176;F, " + parisWeatherDescription;
+  document.getElementById("ParisTimeUpdated").innerHTML = "Last updated: " + parisWeatherTimeUpdated;
 
   worldwideTemperatures.ParisFahrenheitHtml = document.getElementById("ParisWeatherFahrenheit");
   worldwideTemperatures.ParisFahrenheitText = worldwideTemperatures.ParisFahrenheitHtml.textContent;
