@@ -351,7 +351,7 @@ totalEpisodes.OngakuShoujoAired + "</b>";
 */
 
 // entry for High Score Girl
-totalEpisodes.HighScoreGirl = "Unknown at the moment"
+totalEpisodes.HighScoreGirl = 12
 totalEpisodes.HighScoreGirlFromHtml = document.getElementById('currentlyWatchedHighScoreGirl');
 totalEpisodes.HighScoreGirlFromText = totalEpisodes.HighScoreGirlFromHtml.textContent;
 totalEpisodes.HighScoreGirlWatched = parseInt(totalEpisodes.HighScoreGirlFromText.match(/(\d+)$/)[0], 10);
