@@ -142,7 +142,7 @@ worldwideTemperatures.weatherTypes = ['Sunny', 'Rain', 'Cloudy', 'Partly Cloudy'
 
 worldwideTemperatures.weatherTypesNight = ['Sunny', 'Rain', 'Cloudy', 'Partly Cloudy', 'Mostly Cloudy', 'Thunderstorms', 'Scattered Thunderstorms'];
 
-// special weather types for Lowee, the land of white snow
+// special weather types for Lowee, the land of snow
 worldwideTemperatures.loweeWeatherTypes = ['Sunny', 'Snow', 'Cloudy', 'Partly Cloudy', 'Mostly Cloudy'];
 
 worldwideTemperatures.loweeWeatherTypesNight = ['Clear', 'Cloudy', 'Snow', 'Partly Cloudy', 'Mostly Cloudy'];
@@ -302,17 +302,19 @@ totalEpisodes.totalSugarLifeAired = parseInt(totalEpisodes.sugarLifeAiredTotal.m
 
 totalEpisodes.episodesBehindSL = totalEpisodes.totalSugarLifeAired - totalEpisodes.currentEpisodesWatchedSL;
 
-if (totalEpisodes.episodesBehindSL === 0) {
-  document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am currently no episodes behind!</b>";
+if (totalEpisodes.episodesBehindSL === 0 && totalEpisodes.happySugarLife === totalEpisodes.currentEpisodesWatchedSL) {
+  document.getElementById('episodesBehindSugarLife').innerHTML = ""; 
 } else if (totalEpisodes.episodesBehindSL < 0) {
   document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am from the future! I am " +
-    Math.abs(totalEpisodes.episodesBehindSL) + " episodes ahead!";
+  Math.abs(totalEpisodes.episodesBehindSL) + " episodes ahead!";
 } else if (totalEpisodes.episodesBehindSL === 1) {
   document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am currently " +
-    totalEpisodes.episodesBehindSL + " episode behind!</b>";
+  totalEpisodes.episodesBehindSL + " episode behind!</b>";
+} else if (totalEpisodes.episodesBehindSL === 0 && totalEpisodes.happySugarLife != totalEpisodes.currentEpisodesWatchedSL) {
+  document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am currently no episodes behind!</b>";
 } else {
   document.getElementById('episodesBehindSugarLife').innerHTML = "<b>I am currently " +
-    totalEpisodes.episodesBehindSL + " episodes behind!</b>";
+  totalEpisodes.episodesBehindSL + " episodes behind!</b>";
 }
 
 
@@ -362,17 +364,19 @@ totalEpisodes.HighScoreGirlAired = parseInt(totalEpisodes.HighScoreGirlAiredText
 
 totalEpisodes.HighScoreGirlBehind = totalEpisodes.HighScoreGirlAired - totalEpisodes.HighScoreGirlWatched;
 
-if (totalEpisodes.HighScoreGirlBehind === 0) {
-  document.getElementById('episodesBehindHighScoreGirl').innerHTML = "<b>I am currently no episodes behind!</b>";
+if (totalEpisodes.HighScoreGirlBehind === 0 && totalEpisodes.HighScoreGirl === totalEpisodes.HighScoreGirlWatched) {
+  document.getElementById('episodesBehindHighScoreGirl').innerHTML = "";  
 } else if (totalEpisodes.HighScoreGirlBehind < 0) {
   document.getElementById('episodesBehindHighScoreGirl').innerHTML = "<b>I am from the future! I am " +
-    Math.abs(totalEpisodes.HighScoreGirlBehind) + " episodes ahead!";
+  Math.abs(totalEpisodes.HighScoreGirlBehind) + " episodes ahead!";
 } else if (totalEpisodes.HighScoreGirlBehind === 1) {
   document.getElementById('episodesBehindHighScoreGirl').innerHTML = "<b>I am currently " +
-    totalEpisodes.HighScoreGirlBehind + " episode behind!</b>";
+  totalEpisodes.HighScoreGirlBehind + " episode behind!</b>";
+} else if (totalEpisodes.HighScoreGirlBehind === 0 && totalEpisodes.HighScoreGirl != totalEpisodes.HighScoreGirlWatched) {
+  document.getElementById('episodesBehindHighScoreGirl').innerHTML = "<b>I am currently no episodes behind!</b>";
 } else {
   document.getElementById('episodesBehindHighScoreGirl').innerHTML = "<b>I am currently " +
-    totalEpisodes.HighScoreGirlBehind + " episodes behind!</b>";
+  totalEpisodes.HighScoreGirlBehind + " episodes behind!</b>";
 }
 
 document.getElementById('totalEpisodesHighScoreGirl').innerHTML = "<b>Total episodes: " + totalEpisodes.HighScoreGirl + "</b>";

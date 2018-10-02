@@ -60,10 +60,17 @@ li.head a:hover {
 }
 
 .footer{
-    padding: 2px;
-    text-align: center;
+    padding: 7px;
     background: lightpink;
-    font-size: 10px;
+}
+
+.footertext {
+    text-align: center;
+    font-size: 15px;
+}
+
+.footer a {
+    text-decoration: none;
 }
 
 .nepimg{
@@ -71,9 +78,6 @@ li.head a:hover {
     max-height: 100%;
     align-self: center;
 }
-
-
-
 
 .titleheader{
     font-family: Arial, Helvetica, sans-serif;
