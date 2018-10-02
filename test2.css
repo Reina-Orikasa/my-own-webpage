@@ -60,7 +60,7 @@ li.head a:hover {
 }
 
 .footer{
-    padding: 7px;
+    padding: 5px;
     background: lightpink;
 }
 
@@ -71,6 +71,15 @@ li.head a:hover {
 
 .footer a {
     text-decoration: none;
+}
+
+.footerlinks a {
+    color: darkblue;
+}
+
+.footerlinks a:hover {
+    text-decoration: underline;
+
 }
 
 .nepimg{
