@@ -35,6 +35,10 @@ callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20
   tokyoWeather(weather, textConditions, timeUpdated);
 });
 
+$('.collapsible').click(function(){
+  $('.reviewWords').slideToggle('slow');
+});
+
 window.displayTime = {}; //global time container
 
 displayTime.time = new Date(); 
@@ -380,3 +384,4 @@ if (totalEpisodes.HighScoreGirlBehind === 0 && totalEpisodes.HighScoreGirl === t
 }
 
 document.getElementById('totalEpisodesHighScoreGirl').innerHTML = "<b>Total episodes: " + totalEpisodes.HighScoreGirl + "</b>";
+

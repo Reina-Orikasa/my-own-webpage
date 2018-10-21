@@ -143,9 +143,17 @@ ul.tc{
     display: inline-block;
 }
 
+.footerList {
+    list-style-type: none;
+}
+
 
 li.tc {
     display: flex;
+}
+
+.noLinkUnderline {
+    text-decoration: none;
 }
 
 li.tc a {
@@ -177,6 +185,26 @@ li.tc a:hover {
     float: left;
     padding-right: 15px;
     max-height: 250px;
+}
+
+.collapsible {
+    background-color: lightpink;
+    color: black;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 14px;
+}
+
+.active, .collapsible:hover {
+    background-color: skyblue;
+}
+
+.reviewWords {
+    display: none;
 }
 
 @media screen and (max-width: 800px){
@@ -215,3 +243,4 @@ li.tc a:hover {
         overflow: hidden;
     }
 }
+
