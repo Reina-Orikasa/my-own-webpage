@@ -69,6 +69,10 @@ li.head a:hover {
     font-size: 15px;
 }
 
+.footertext a:hover {
+    text-decoration: underline;
+}
+
 .footer a {
     text-decoration: none;
 }
@@ -80,6 +84,16 @@ li.head a:hover {
 .footerlinks a:hover {
     text-decoration: underline;
 
+}
+
+.footerlinksbot a {
+    color: darkblue;
+    text-align: center;
+    display: block;
+}
+
+.footerlinksbot a:hover {
+    text-decoration: underline;
 }
 
 .nepimg{
@@ -141,15 +155,6 @@ ul.tc{
     overflow: hidden;
     text-align: center;
     display: inline-block;
-}
-
-.footerList {
-    list-style-type: none;
-    text-align: center;
-}
-
-.footerList a:hover {
-    text-decoration: underline;
 }
 
 

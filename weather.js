@@ -35,6 +35,7 @@ callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20
   tokyoWeather(weather, textConditions, timeUpdated);
 });
 
+// jQuery collapsible for reviewDiv
 $('.collapsible').click(function(){
   $('.reviewWords').slideToggle('slow');
 });
