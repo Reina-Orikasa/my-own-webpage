@@ -145,7 +145,7 @@ worldwideTemperatures.leanboxType = '';
 
 worldwideTemperatures.weatherTypes = ['Sunny', 'Rain', 'Cloudy', 'Partly Cloudy', 'Mostly Cloudy', 'Thunderstorms', 'Scattered Thunderstorms'];
 
-worldwideTemperatures.weatherTypesNight = ['Sunny', 'Rain', 'Cloudy', 'Partly Cloudy', 'Mostly Cloudy', 'Thunderstorms', 'Scattered Thunderstorms'];
+worldwideTemperatures.weatherTypesNight = ['Clear', 'Rain', 'Cloudy', 'Partly Cloudy', 'Mostly Cloudy', 'Thunderstorms', 'Scattered Thunderstorms'];
 
 // special weather types for Lowee, the land of snow
 worldwideTemperatures.loweeWeatherTypes = ['Sunny', 'Snow', 'Cloudy', 'Partly Cloudy', 'Mostly Cloudy'];
