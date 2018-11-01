@@ -88,8 +88,8 @@ li.head a:hover {
 
 .footerlinksbot a {
     color: darkblue;
-    padding-left: 55%;
-    display: block;
+    padding-left: 35%;
+    display: inline-block;
 }
 
 .footerlinksbot a:hover {
