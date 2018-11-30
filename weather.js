@@ -296,7 +296,7 @@ worldwideTemperatures.fahrenheit = function() {
 window.totalEpisodes = {}; //global container for anime stats. fun stuff.
 
 //beg. Happy Sugar Life
-totalEpisodes.happySugarLife = 12;
+/*totalEpisodes.happySugarLife = 12;
 totalEpisodes.watchedSugarLife = document.getElementById('currentlyWatchedSugarLife');
 totalEpisodes.watchedSugarLifeCurrent = totalEpisodes.watchedSugarLife.textContent;
 totalEpisodes.currentEpisodesWatchedSL = parseInt(totalEpisodes.watchedSugarLifeCurrent.match(/(\d+)$/)[0], 10);

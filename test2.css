@@ -192,6 +192,7 @@ li.tc a:hover {
     float: left;
     padding-right: 15px;
     max-height: 250px;
+    width: 200px;
 }
 
 .collapsible {
@@ -248,6 +249,7 @@ li.tc a:hover {
     .animePhoto{
         float: none;
         max-height: 250px;
+        width: 200px;
     }
 
     .animeStats{
