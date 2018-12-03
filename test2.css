@@ -233,7 +233,7 @@ li.tc a:hover {
     }
 
     .nepneps{
-        font-size: 20px;
+        font-size: 25px;
         right: 20%;
         top: 30%;
     }
@@ -265,6 +265,7 @@ li.tc a:hover {
 
     .nepneps {
         right: 15%;
+        font-size: 25px;
     }
 
     .nepheader {
@@ -288,6 +289,7 @@ li.tc a:hover {
 
     .nepneps {
         right: 15%;
+        font-size: 25px;
     }
 
 }
