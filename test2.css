@@ -104,12 +104,6 @@ li.head a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.nepheader{
-    position: absolute;
-    bottom: 0;
-    left: 35%;
-}
-
 .nepneps{
     color: orangered;
     left: 48%;
@@ -117,6 +111,12 @@ li.head a:hover {
     position: relative;
     margin-top: 1%;
     font-size: 30px;
+}
+
+.nepheader{
+    position: absolute;
+    bottom: 0;
+    left: 30%;
 }
 
 #toc {
@@ -215,7 +215,68 @@ li.tc a:hover {
     display: none;
 }
 
-@media screen and (max-width: 800px){
+
+@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: portrait) {
+    .nepneps {
+        font-size: 20px;
+        padding-top: 5%;
+    }
+    .nepheader {
+        left: 5%;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: landscape) {
+    .nepheader {
+        left: 25%;
+    }
+    .nepneps{
+        font-size: 25px;
+        padding-top: 2%;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: portrait) {
+    .nepneps {
+        font-size: 22px;
+    }
+    .nepheader {
+        left: 11%;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
+    .nepheader {
+        left: 25%;
+    }
+}    
+
+@media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
+    .nepneps {
+        font-size: 25px;
+        padding-top: 5%;    
+    }
+}
+
+@media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
+    .nepheader {
+        left: 25%;
+    }
+}  
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    .nepheader {
+        left: 30%;
+    }
+}
+
+@media only screen and (min-width: 834px) and (max-width: 1112px) and (orientation: landscape) {
+    .nepheader {
+        left: 32%;
+    }
+}
+
+@media only screen and (max-width: 3840) {
     .flex-container, ul, li{
         flex-direction: column;
     }
@@ -226,24 +287,8 @@ li.tc a:hover {
     
     }
 
-    .nepheader{
-        position: absolute;
-        bottom: 0;
-        left: 10%;
-    }
-
-    .nepneps{
-        font-size: 25px;
-        right: 20%;
-        top: 30%;
-    }
-
     .container{
         display: flex;
-    }
-
-    .nepneps{
-        font-size: 20px;
     }
 
     .animePhoto{
@@ -256,42 +301,5 @@ li.tc a:hover {
         display: inline-block;
         overflow: hidden;
     }
-}
-
-@media only screen 
-  and (min-device-width: 834px) 
-  and (max-device-width: 1112px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-    .nepneps {
-        right: 15%;
-        font-size: 25px;
-    }
-
-    .nepheader {
-        position: absolute;
-        bottom: 0;
-        left: 20%;
-    }
 
 }
-
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-    .nepheader {
-        position: absolute;
-        bottom: 0;
-        left: 20%;
-    }
-
-    .nepneps {
-        right: 15%;
-        font-size: 25px;
-    }
-
-}
-
-
