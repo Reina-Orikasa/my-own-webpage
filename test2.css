@@ -224,6 +224,11 @@ li.tc a:hover {
     .nepheader {
         left: 5%;
     }
+
+    .animeStats{
+        display: inline-block;
+        overflow: hidden;
+    }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: landscape) {
@@ -234,6 +239,11 @@ li.tc a:hover {
         font-size: 25px;
         padding-top: 2%;
     }
+
+    .animeStats{
+        display: inline-block;
+        overflow: hidden;
+    }
 }
 
 @media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: portrait) {
@@ -243,11 +253,21 @@ li.tc a:hover {
     .nepheader {
         left: 11%;
     }
+
+    .animeStats{
+        display: inline-block;
+        overflow: hidden;
+    }
 }
 
 @media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
     .nepheader {
         left: 25%;
+    }
+
+    .animeStats{
+        display: inline-block;
+        overflow: hidden;
     }
 }    
 
@@ -256,11 +276,21 @@ li.tc a:hover {
         font-size: 25px;
         padding-top: 5%;    
     }
+
+    .animeStats{
+        display: inline-block;
+        overflow: hidden;
+    }
 }
 
 @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
     .nepheader {
         left: 25%;
+    }
+
+    .animeStats{
+        display: inline-block;
+        overflow: hidden;
     }
 }  
 
@@ -268,6 +298,7 @@ li.tc a:hover {
     .nepheader {
         left: 30%;
     }
+
 }
 
 @media only screen and (min-width: 834px) and (max-width: 1112px) and (orientation: landscape) {
