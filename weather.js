@@ -359,7 +359,7 @@ totalEpisodes.OngakuShoujoAired + "</b>";
 
 // entry for High Score Girl
 totalEpisodes.HighScoreGirl = 12
-totalEpisodes.HighScoreGirlFromHtml = document.getElementById('currentlyWatchedHighScoreGirl');
+/*totalEpisodes.HighScoreGirlFromHtml = document.getElementById('currentlyWatchedHighScoreGirl');
 totalEpisodes.HighScoreGirlFromText = totalEpisodes.HighScoreGirlFromHtml.textContent;
 totalEpisodes.HighScoreGirlWatched = parseInt(totalEpisodes.HighScoreGirlFromText.match(/(\d+)$/)[0], 10);
 
@@ -385,4 +385,5 @@ if (totalEpisodes.HighScoreGirlBehind === 0 && totalEpisodes.HighScoreGirl === t
 }
 
 document.getElementById('totalEpisodesHighScoreGirl').innerHTML = "<b>Total episodes: " + totalEpisodes.HighScoreGirl + "</b>";
+*/
 
