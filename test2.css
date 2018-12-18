@@ -145,6 +145,11 @@ li.head a:hover {
     padding: 10px; 
 }
 
+.tsundere-sakura {
+    height: auto;
+    width: auto;
+}
+
 ul.tc{
     list-style-type: none;
     margin: 0 auto;
@@ -229,6 +234,11 @@ li.tc a:hover {
         display: inline-block;
         overflow: hidden;
     }
+
+    .tsundere-sakura {
+        height: auto;
+        width: 95%;
+    }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: landscape) {
@@ -244,6 +254,11 @@ li.tc a:hover {
         display: inline-block;
         overflow: hidden;
     }
+
+    .tsundere-sakura {
+        height: auto;
+        width: 95%;
+    }
 }
 
 @media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: portrait) {
@@ -258,6 +273,10 @@ li.tc a:hover {
         display: inline-block;
         overflow: hidden;
     }
+    .tsundere-sakura {
+        height: auto;
+        width: 95%;
+    }
 }
 
 @media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
@@ -268,6 +287,11 @@ li.tc a:hover {
     .animeStats{
         display: inline-block;
         overflow: hidden;
+    }
+
+    .tsundere-sakura {
+        height: auto;
+        width: 95%;
     }
 }    
 
@@ -281,6 +305,10 @@ li.tc a:hover {
         display: inline-block;
         overflow: hidden;
     }
+    .tsundere-sakura {
+        height: auto;
+        width: 95%;
+    }
 }
 
 @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
@@ -291,6 +319,10 @@ li.tc a:hover {
     .animeStats{
         display: inline-block;
         overflow: hidden;
+    }
+    .tsundere-sakura {
+        height: auto;
+        width: 95%;
     }
 }  
 
