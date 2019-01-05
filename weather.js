@@ -1,40 +1,3 @@
-// Sets the framework for AJAX calls
-function callAjax(url, callback) {
-  var xmlhttp;
-  // compatible with IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-          var w = JSON.parse(xmlhttp.responseText); //pharse json response
-          //callback variables
-          var weather = w.query.results.channel.item.condition.temp; // weather variable
-
-          var textConditions = w.query.results.channel.item.condition.text; // current conditions
-
-          var timeUpdated = w.query.results.channel.item.condition.date; // last updated time
-          // callback for async 
-          callback(weather, textConditions, timeUpdated);
-      }
-  }
-  xmlhttp.open("GET", url, true);
-  xmlhttp.send();
-}
-
-// AJAX calls to Yahoo! Weather API + callback function
-callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from
-%20weather.forecast%20where%20woeid%20%3D%202490383&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions, timeUpdated) {
-seattleWeather(weather, textConditions, timeUpdated);
-});
-
-callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast
-%20where%20woeid%20%3D%20615702&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions, timeUpdated) {
-  parisWeather(weather, textConditions, timeUpdated);
-});
-callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where
-%20woeid%20%3D%201118370&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`, function(weather, textConditions, timeUpdated) {
-  tokyoWeather(weather, textConditions, timeUpdated);
-});
-
 // jQuery collapsible for reviewDiv
 $('.collapsible').click(function(){
   $('.reviewWords').slideToggle('slow');
@@ -77,62 +40,6 @@ worldwideTemperatures.lastationFahrenheit = 0;
 worldwideTemperatures.loweeFahrenheit = 0;
 
 worldwideTemperatures.leanboxFahrenheit = 0;
-
-//callback functions
-function seattleWeather(temp, description, updated) {
-  seattleWeatherFahrenheit = temp;
-  seattleWeatherDescription = description;
-  seattleWeatherTimeUpdated = updated;
-
-  document.getElementById("SeattleWeatherFahrenheit").innerHTML = "Seattle: " + seattleWeatherFahrenheit + "&#176;F, " + seattleWeatherDescription;
-  document.getElementById("SeattleTimeUpdated").innerHTML = "Last updated: " + seattleWeatherTimeUpdated;
-
-  worldwideTemperatures.SeattleFahrenheitHtml = document.getElementById("SeattleWeatherFahrenheit");
-  worldwideTemperatures.SeattleFahrenheitText = worldwideTemperatures.SeattleFahrenheitHtml.textContent;
-  worldwideTemperatures.SeattleFahrenheitParse = worldwideTemperatures.SeattleFahrenheitText.replace(/[^0-9]/g, ''); // removes letters from string
-  worldwideTemperatures.SeattleFahrenheit = Number(worldwideTemperatures.SeattleFahrenheitParse); // changes string number to int number
-
-  worldwideTemperatures.SeattleCelsius = Math.round((worldwideTemperatures.SeattleFahrenheit - 32) * (5 / 9)); // converts to celsius
-
-  worldwideTemperatures.seattleWeatherDescription = seattleWeatherDescription; // sets weather description for later use 
-
-}
-
-function tokyoWeather(temp, description, updated) {
-  tokyoWeatherFahrenheit = temp;
-  tokyoWeatherDescription = description;
-  tokyoWeatherTimeUpdated = updated;
-
-  document.getElementById("TokyoWeatherFahrenheit").innerHTML = "Tokyo: " + tokyoWeatherFahrenheit + "&#176;F, " + tokyoWeatherDescription;
-  document.getElementById("TokyoTimeUpdated").innerHTML = "Last updated: " + tokyoWeatherTimeUpdated;
-
-  worldwideTemperatures.TokyoFahrenheitHtml = document.getElementById("TokyoWeatherFahrenheit");
-  worldwideTemperatures.TokyoFahrenheitText = worldwideTemperatures.TokyoFahrenheitHtml.textContent;
-  worldwideTemperatures.TokyoFahrenheitParse = worldwideTemperatures.TokyoFahrenheitText.replace(/[^0-9]/g, '');
-  worldwideTemperatures.TokyoFahrenheit = Number(worldwideTemperatures.TokyoFahrenheitParse);
-
-  worldwideTemperatures.TokyoCelsius = Math.round((worldwideTemperatures.TokyoFahrenheit - 32) * (5 / 9));
-
-  worldwideTemperatures.tokyoWeatherDescription = tokyoWeatherDescription;
-}
-
-function parisWeather(temp, description, updated) {
-  parisWeatherFahrenheit = temp;
-  parisWeatherDescription = description;
-  parisWeatherTimeUpdated = updated;
-
-  document.getElementById("ParisWeatherFahrenheit").innerHTML = "Paris: " + parisWeatherFahrenheit + "&#176;F, " + parisWeatherDescription;
-  document.getElementById("ParisTimeUpdated").innerHTML = "Last updated: " + parisWeatherTimeUpdated;
-
-  worldwideTemperatures.ParisFahrenheitHtml = document.getElementById("ParisWeatherFahrenheit");
-  worldwideTemperatures.ParisFahrenheitText = worldwideTemperatures.ParisFahrenheitHtml.textContent;
-  worldwideTemperatures.ParisFahrenheitParse = worldwideTemperatures.ParisFahrenheitText.replace(/[^0-9]/g, '');
-  worldwideTemperatures.ParisFahrenheit = Number(worldwideTemperatures.ParisFahrenheitParse);
-
-  worldwideTemperatures.ParisCelsius = Math.round((worldwideTemperatures.ParisFahrenheit - 32) * (5 / 9));
-
-  worldwideTemperatures.parisWeatherDescription = parisWeatherDescription;
-}
 
 //weather types for Gamindustri
 worldwideTemperatures.planeptuneType = '';
@@ -267,13 +174,6 @@ worldwideTemperatures.celsius = function() {
   ("<br>") + "Lowee: " + worldwideTemperatures.loweeCelsius + "&#176;C" + ", " +
   worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxCelsius +
   "&#176;C" + ", " + worldwideTemperatures.leanboxType;
-
-  document.getElementById('SeattleWeatherFahrenheit').innerHTML = "Seattle: " + worldwideTemperatures.SeattleCelsius + "&#176;C, " + 
-  worldwideTemperatures.seattleWeatherDescription;
-  document.getElementById('TokyoWeatherFahrenheit').innerHTML= "Tokyo: " + worldwideTemperatures.TokyoCelsius + "&#176;C, " + 
-  worldwideTemperatures.tokyoWeatherDescription;
-  document.getElementById('ParisWeatherFahrenheit').innerHTML = "Paris: " + worldwideTemperatures.ParisCelsius + "&#176;C, " + 
-  worldwideTemperatures.parisWeatherDescription;
 }
 
 worldwideTemperatures.fahrenheit = function() {
@@ -285,12 +185,6 @@ worldwideTemperatures.fahrenheit = function() {
   worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit +
   "&#176;F" + ", " + worldwideTemperatures.leanboxType;
 
-  document.getElementById('SeattleWeatherFahrenheit').innerHTML = "Seattle: " + worldwideTemperatures.SeattleFahrenheit + "&#176;F, " + 
-  worldwideTemperatures.seattleWeatherDescription;
-  document.getElementById('TokyoWeatherFahrenheit').innerHTML= "Tokyo: " + worldwideTemperatures.TokyoFahrenheit + "&#176;F, " + 
-  worldwideTemperatures.tokyoWeatherDescription;
-  document.getElementById('ParisWeatherFahrenheit').innerHTML = "Paris: " + worldwideTemperatures.ParisFahrenheit + "&#176;F, " +
-  worldwideTemperatures.parisWeatherDescription;;
 }
 
 window.totalEpisodes = {}; //global container for anime stats. fun stuff.
