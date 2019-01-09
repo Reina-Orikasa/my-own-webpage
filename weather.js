@@ -81,8 +81,6 @@ function seattleWeather(temp, description) {
   SeattleWeatherCelsius = temp;
   seattleWeatherDescription = description;
 
-  document.getElementById("SeattleWeatherCelsius").innerHTML = "Seattle: " + SeattleWeatherCelsius + "&#176;C, " + seattleWeatherDescription;
-
   /*worldwideTemperatures.SeattleCelsiusHtml = document.getElementById("SeattleWeatherCelsius");
   worldwideTemperatures.SeattleCelsiusText = worldwideTemperatures.SeattleCelsiusHtml.textContent;
   worldwideTemperatures.SeattleCelsiusParse = worldwideTemperatures.SeattleCelsiusText.replace(/[^0-9]/g, ''); // removes letters from string
@@ -93,6 +91,8 @@ function seattleWeather(temp, description) {
   worldwideTemperatures.SeattleFahrenheit = Math.round(((worldwideTemperatures.SeattleCelsius * (9 / 5)) + 32)); // converts to fahrenheit
 
   worldwideTemperatures.seattleWeatherDescription = seattleWeatherDescription; // sets weather description for later use 
+
+  document.getElementById("SeattleWeatherCelsius").innerHTML = "Seattle: " + worldwideTemperatures.SeattleFahrenheit + "&#176;C, " + seattleWeatherDescription;
 
 }
 
