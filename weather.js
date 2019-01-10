@@ -92,7 +92,7 @@ function seattleWeather(temp, description) {
 
   worldwideTemperatures.seattleWeatherDescription = seattleWeatherDescription; // sets weather description for later use 
 
-  document.getElementById("SeattleWeatherCelsius").innerHTML = "Seattle: " + worldwideTemperatures.SeattleFahrenheit + "&#176;C, " + seattleWeatherDescription;
+  document.getElementById("SeattleWeatherCelsius").innerHTML = "Seattle: " + worldwideTemperatures.SeattleFahrenheit + "&#176;F, " + seattleWeatherDescription;
 
 }
 
