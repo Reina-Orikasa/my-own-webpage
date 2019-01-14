@@ -5,7 +5,7 @@
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-          var w = JSON.parse(xmlhttp.responseText); //pharse json response
+          var w = JSON.parse(xmlhttp.responseText); //parse JSON response
           //callback variables
           var weather = w.main.temp; // weather variable
 
