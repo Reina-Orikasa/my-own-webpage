@@ -9,7 +9,7 @@
           //callback variables
           var weather = w.main.temp; // weather variable
 
-          var textConditions = w.weather[0].description;
+          var textConditions = w.weather[0].description; // description var
           callback(weather, textConditions);
       }
   }
@@ -17,7 +17,7 @@
   xmlhttp.send();
 }
 
-// AJAX calls to Yahoo! Weather API + callback function
+// AJAX calls to FCC weather API + Callback function
 callAjax(`https://fcc-weather-api.glitch.me/api/current?lat=47.609722&lon=-122.333056`, function(weather, textConditions) {
   seattleWeather(weather, textConditions);
 });
