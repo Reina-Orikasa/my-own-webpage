@@ -5,12 +5,17 @@
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-          var w = JSON.parse(xmlhttp.responseText); //parse JSON response
-          //callback variables
-          var weather = w.main.temp; // weather variable
+        var w = JSON.parse(xmlhttp.responseText); //parse JSON response
+        //callback variables
+        var weather = w.main.temp; // weather variable
 
-          var textConditions = w.weather[0].description; // description var
-          callback(weather, textConditions);
+        var cityName = w.name; // city name variable
+
+        var textConditions = w.weather[0].description; // description var
+        if (cityName != "Shuzenji") {
+          callback(weather, textConditions, cityName);
+        }
+        
       }
   }
   xmlhttp.open("GET", url, true);
@@ -18,8 +23,8 @@
 }
 
 // AJAX calls to FCC weather API + Callback function
-callAjax(`https://fcc-weather-api.glitch.me/api/current?lat=47.609722&lon=-122.333056`, function(weather, textConditions) {
-  seattleWeather(weather, textConditions);
+callAjax(`https://fcc-weather-api.glitch.me/api/current?lat=47.609722&lon=-122.333056`, function(weather, textConditions, cityName) {
+  cityWeather(weather, textConditions, cityName);
 });
 
 /*callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast
@@ -77,23 +82,27 @@ worldwideTemperatures.loweeFahrenheit = 0;
 worldwideTemperatures.leanboxFahrenheit = 0;
 
 //callback functions
-function seattleWeather(temp, description) {
-  SeattleWeatherCelsius = temp;
-  seattleWeatherDescription = description;
+function cityWeather(temp, description, cityName) {
+  weatherCelsius = temp;
+  weatherDescription = description;
+  cityNameWeather = cityName;
 
   /*worldwideTemperatures.SeattleCelsiusHtml = document.getElementById("SeattleWeatherCelsius");
   worldwideTemperatures.SeattleCelsiusText = worldwideTemperatures.SeattleCelsiusHtml.textContent;
   worldwideTemperatures.SeattleCelsiusParse = worldwideTemperatures.SeattleCelsiusText.replace(/[^0-9]/g, ''); // removes letters from string
   worldwideTemperatures.SeattleCelsius = Number(worldwideTemperatures.SeattleCelsiusParse); // changes string number to int number */
 
-  worldwideTemperatures.SeattleCelsius = temp;
+  worldwideTemperatures.cityName = cityName;
 
-  worldwideTemperatures.SeattleFahrenheit = Math.round(((worldwideTemperatures.SeattleCelsius * (9 / 5)) + 32)); // converts to fahrenheit
+  worldwideTemperatures.cityCelsius = temp;
 
-  worldwideTemperatures.seattleWeatherDescription = seattleWeatherDescription; // sets weather description for later use 
+  worldwideTemperatures.cityFahrenheit = Math.round(((worldwideTemperatures.cityCelsius * (9 / 5)) + 32)); // converts to fahrenheit
 
-  document.getElementById("SeattleWeatherCelsius").innerHTML = "Seattle: " + worldwideTemperatures.SeattleFahrenheit + "&#176;F, " + seattleWeatherDescription;
-
+  worldwideTemperatures.weatherDescription = weatherDescription; // sets weather description for later use 
+  
+  document.getElementById("worldHeader").innerHTML = "<u>Elsewhere in the World</u>"
+  document.getElementById("worldTemps").innerHTML = cityName + ": " + worldwideTemperatures.cityFahrenheit + "&#176;F, " + worldwideTemperatures.weatherDescription;
+  
 }
 
 
@@ -250,7 +259,7 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) { // ass
     worldwideTemperatures.weatherTypesNight.length)];
 }
 
-document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " +
+document.getElementById('weather').innerHTML = "<u>Weather Currently</u>" + ("<br>") + "<br>Planeptune: " +
 worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
 ("<br>") + "<u>Elsewhere in Gamindustri</u>" + ("<br>") + ("<br>") + "Lastation: " +
 worldwideTemperatures.lastationFahrenheit + "&#176;F" + ", " + worldwideTemperatures.lastationType +
