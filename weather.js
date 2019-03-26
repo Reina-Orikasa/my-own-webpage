@@ -267,18 +267,18 @@ worldwideTemperatures.lastationFahrenheit + "&#176;F" + ", " + worldwideTemperat
 worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit +
 "&#176;F" + ", " + worldwideTemperatures.leanboxType;
 
-//this is where it gets fun
+// convert weather from F to C and vice versa
 worldwideTemperatures.celsius = function() {
-  document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " +
+  document.getElementById('weather').innerHTML = "<u>Weather Currently</u>" + ("<br>") + "Planeptune: " +
   worldwideTemperatures.planeptuneCelsius + "&#176;C" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
-  ("<br>") + "Elsewhere in Gamindustri" + ("<br>") + ("<br>") + "Lastation: " +
+  ("<br>") + "<u>Elsewhere in Gamindustri</u>" + ("<br>") + ("<br>") + "Lastation: " +
   worldwideTemperatures.lastationCelsius + "&#176;C" + ", " + worldwideTemperatures.lastationType +
   ("<br>") + "Lowee: " + worldwideTemperatures.loweeCelsius + "&#176;C" + ", " +
   worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxCelsius +
   "&#176;C" + ", " + worldwideTemperatures.leanboxType;
 
-  document.getElementById('SeattleWeatherCelsius').innerHTML = "Seattle: " + worldwideTemperatures.SeattleCelsius + "&#176;C, " + 
-  worldwideTemperatures.seattleWeatherDescription;
+  document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityCelsius + "&#176;C, " + 
+  worldwideTemperatures.weatherDescription;
   /*document.getElementById('TokyoWeatherFahrenheit').innerHTML= "Tokyo: " + worldwideTemperatures.TokyoCelsius + "&#176;C, " + 
   worldwideTemperatures.tokyoWeatherDescription;
   document.getElementById('ParisWeatherFahrenheit').innerHTML = "Paris: " + worldwideTemperatures.ParisCelsius + "&#176;C, " + 
@@ -286,16 +286,16 @@ worldwideTemperatures.celsius = function() {
 }
 
 worldwideTemperatures.fahrenheit = function() {
-  document.getElementById('weather').innerHTML = "Weather Currently" + ("<br>") + "Planeptune: " +
+  document.getElementById('weather').innerHTML = "<u>Weather Currently</u>" + ("<br>") + "Planeptune: " +
   worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
-  ("<br>") + "Elsewhere in Gamindustri" + ("<br>") + ("<br>") + "Lastation: " +
+  ("<br>") + "<u>Elsewhere in Gamindustri</u>" + ("<br>") + ("<br>") + "Lastation: " +
   worldwideTemperatures.lastationFahrenheit + "&#176;F" + ", " + worldwideTemperatures.lastationType +
   ("<br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + ", " +
   worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit +
   "&#176;F" + ", " + worldwideTemperatures.leanboxType;
 
-  document.getElementById('SeattleWeatherCelsius').innerHTML = "Seattle: " + worldwideTemperatures.SeattleFahrenheit + "&#176;F, " + 
-  worldwideTemperatures.seattleWeatherDescription;
+  document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityFahrenheit + "&#176;F, " + 
+  worldwideTemperatures.weatherDescription;
   /*
   document.getElementById('TokyoWeatherFahrenheit').innerHTML= "Tokyo: " + worldwideTemperatures.TokyoFahrenheit + "&#176;F, " + 
   worldwideTemperatures.tokyoWeatherDescription;
