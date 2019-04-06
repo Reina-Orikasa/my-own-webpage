@@ -1,5 +1,5 @@
 // Sets the framework for AJAX calls
- function callAjax(url, callback) {
+function callAjax(url, callback) {
   var xmlhttp;
   // compatible with IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp = new XMLHttpRequest();
