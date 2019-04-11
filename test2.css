@@ -67,11 +67,12 @@ li.head a:hover {
     font-size: 15px;
 }
 
-.footertext a:hover, .footerlinks a:hover, .footerlinksbot a:hover {
+.footertext a:hover, .footerlinks a:hover, .footerlinksbot a:hover, .reviewDescription:hover, 
+.animeLinks a:hover {
     text-decoration: underline;
 }
 
-.footer a, .noLinkUnderline {
+.footer a, .noLinkUnderline, .animeLinks a {
     text-decoration: none;
 }
 
@@ -176,10 +177,6 @@ li.tc a:hover {
     overflow: hidden;
 }
 
-.animeLinks a{
-    text-decoration: none;
-}
-
 .animePhoto{
     float: left;
     padding-right: 15px;
@@ -211,11 +208,6 @@ li.tc a:hover {
     cursor: pointer;
     text-align: center;
 }
-
-.reviewDescription:hover {
-    text-decoration: underline;
-}
-
 
 @media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: portrait) {
     .nepneps {
