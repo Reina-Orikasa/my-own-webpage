@@ -67,11 +67,11 @@ li.head a:hover {
     font-size: 15px;
 }
 
-.footertext a:hover {
+.footertext a:hover, .footerlinks a:hover, .footerlinksbot a:hover {
     text-decoration: underline;
 }
 
-.footer a {
+.footer a, .noLinkUnderline {
     text-decoration: none;
 }
 
@@ -79,19 +79,10 @@ li.head a:hover {
     color: darkblue;
 }
 
-.footerlinks a:hover {
-    text-decoration: underline;
-
-}
-
 .footerlinksbot a {
     color: darkblue;
     margin-left: 40%;
     display: inline-block;
-}
-
-.footerlinksbot a:hover {
-    text-decoration: underline;
 }
 
 .nepimg{
@@ -164,10 +155,6 @@ li.tc {
     display: flex;
 }
 
-.noLinkUnderline {
-    text-decoration: none;
-}
-
 li.tc a {
     color: black;
     padding: 15px 20px;
@@ -216,8 +203,17 @@ li.tc a:hover {
     background-color: skyblue;
 }
 
-.reviewWords {
+.reviewWords, .reviewList {
     display: none;
+}
+
+.reviewDescription {
+    cursor: pointer;
+    text-align: center;
+}
+
+.reviewDescription:hover {
+    text-decoration: underline;
 }
 
 

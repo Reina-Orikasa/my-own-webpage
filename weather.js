@@ -38,9 +38,13 @@ callAjax(`https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20
 */
 
 
-// jQuery collapsible for reviewDiv
+// jQuery collapsible for reviewDiv and reviewList
 $('.collapsible').click(function(){
   $('.reviewWords').slideToggle('slow');
+});
+
+$('.reviewDescription').click(function(){
+  $('.reviewList').slideToggle('slow');
 });
 
 window.displayTime = {}; //global time container
