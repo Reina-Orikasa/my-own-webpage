@@ -220,6 +220,11 @@ li.tc a:hover {
     text-align: center;
 }
 
+.worldTemps {
+    list-style: none;
+    padding-left: 0;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: portrait) {
     .nepneps {
         font-size: 20px;

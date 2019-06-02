@@ -27,6 +27,10 @@ callAjax(`https://fcc-weather-api.glitch.me/api/current?lat=47.609722&lon=-122.3
   cityWeather(weather, textConditions, cityName);
 });
 
+/*callAjax(`https://fcc-weather-api.glitch.me/api/current?lat=35.699612&lon=139.771364`, function(weather, textConditions, cityName) {
+  cityWeather(weather, textConditions, cityName);
+}) */
+
 // jQuery collapsible for reviewDiv and reviewList
 $('.collapsible').click(function(){
   $('.reviewWords').slideToggle('slow');
@@ -88,8 +92,17 @@ function cityWeather(temp, description, cityName) {
 
   worldwideTemperatures.weatherDescription = weatherDescription; // sets weather description for later use 
   
+  /*var node = document.createElement("LI");
+  var textNode = document.createTextNode(cityName + ": ");
+  var tempNode = document.createTextNode(worldwideTemperatures.cityFahrenheit)
+  node.appendChild(textNode);
+  node.appendChild(tempNode);
+  p1 = document.getElementById("worldTemps");
+  p1.appendChild(node);*/
+  document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityFahrenheit + "&#176;F, " + 
+  worldwideTemperatures.weatherDescription;
+
   document.getElementById("worldHeader").innerHTML = "<u>Elsewhere in the World</u>"
-  document.getElementById("worldTemps").innerHTML = cityName + ": " + worldwideTemperatures.cityFahrenheit + "&#176;F, " + worldwideTemperatures.weatherDescription;
   
 }
 
@@ -120,16 +133,16 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) { // ass
   worldwideTemperatures.leanboxFahrenheit = setTemperature(45, 70);
 
   worldwideTemperatures.planeptuneCelsius = 
-  convertCelsius(worldwideTemperatures.planeptuneFahrenheit);
+    convertCelsius(worldwideTemperatures.planeptuneFahrenheit);
 
   worldwideTemperatures.lastationCelsius = 
-  convertCelsius(worldwideTemperatures.lastationFahrenheit);
+    convertCelsius(worldwideTemperatures.lastationFahrenheit);
 
   worldwideTemperatures.loweeCelsius =
-  convertCelsius(worldwideTemperatures.loweeFahrenheit);
+    convertCelsius(worldwideTemperatures.loweeFahrenheit);
 
   worldwideTemperatures.leanboxCelsius =
-  convertCelsius(worldwideTemperatures.leanboxFahrenheit);
+    convertCelsius(worldwideTemperatures.leanboxFahrenheit);
 
   setWeatherType();
 
@@ -141,16 +154,16 @@ if (worldwideTemperatures.hour >= 8 && worldwideTemperatures.hour < 12) { // ass
   worldwideTemperatures.leanboxFahrenheit = setTemperature(65, 76);
   
   worldwideTemperatures.planeptuneCelsius = 
-  convertCelsius(worldwideTemperatures.planeptuneFahrenheit);
+    convertCelsius(worldwideTemperatures.planeptuneFahrenheit);
 
   worldwideTemperatures.lastationCelsius = 
-  convertCelsius(worldwideTemperatures.lastationFahrenheit);
+    convertCelsius(worldwideTemperatures.lastationFahrenheit);
 
   worldwideTemperatures.loweeCelsius =
-  convertCelsius(worldwideTemperatures.loweeFahrenheit);
+    convertCelsius(worldwideTemperatures.loweeFahrenheit);
 
   worldwideTemperatures.leanboxCelsius =
-  convertCelsius(worldwideTemperatures.leanboxFahrenheit);
+    convertCelsius(worldwideTemperatures.leanboxFahrenheit);
   
   setWeatherType();
 
@@ -189,12 +202,12 @@ fillHTML();
 // convert weather from F to C and vice versa
 worldwideTemperatures.celsius = function() {
   document.getElementById('weather').innerHTML = "<u>Weather Currently</u>" + ("<br>") + "<br>Planeptune: " +
-  worldwideTemperatures.planeptuneCelsius + "&#176;C" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
+  worldwideTemperatures.planeptuneCelsius + "&#176;C" + ", <br>" + worldwideTemperatures.planeptuneType + ("<br>") +
   ("<br>") + "<u>Elsewhere in Gamindustri</u>" + ("<br>") + ("<br>") + "Lastation: " +
-  worldwideTemperatures.lastationCelsius + "&#176;C" + ", " + worldwideTemperatures.lastationType +
-  ("<br>") + "Lowee: " + worldwideTemperatures.loweeCelsius + "&#176;C" + ", " +
-  worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxCelsius +
-  "&#176;C" + ", " + worldwideTemperatures.leanboxType;
+  worldwideTemperatures.lastationCelsius + "&#176;C" + ", <br>" + worldwideTemperatures.lastationType +
+  ("<br><br>") + "Lowee: " + worldwideTemperatures.loweeCelsius + "&#176;C" + ", <br>" +
+  worldwideTemperatures.loweeType + ("<br><br>") + "Leanbox: " + worldwideTemperatures.leanboxCelsius +
+  "&#176;C" + ", <br>" + worldwideTemperatures.leanboxType;
 
   document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityCelsius + "&#176;C, " + 
   worldwideTemperatures.weatherDescription;
@@ -218,12 +231,12 @@ function fillWorldTemps() {
 
 function fillHTML() {
   document.getElementById('weather').innerHTML = "<u>Weather Currently</u>" + ("<br>") + "<br>Planeptune: " +
-  worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", " + worldwideTemperatures.planeptuneType + ("<br>") +
+  worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", <br>" + worldwideTemperatures.planeptuneType + ("<br>") +
   ("<br>") + "<u>Elsewhere in Gamindustri</u>" + ("<br>") + ("<br>") + "Lastation: " +
-  worldwideTemperatures.lastationFahrenheit + "&#176;F" + ", " + worldwideTemperatures.lastationType +
-  ("<br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + ", " +
-  worldwideTemperatures.loweeType + ("<br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit +
-  "&#176;F" + ", " + worldwideTemperatures.leanboxType;
+  worldwideTemperatures.lastationFahrenheit + "&#176;F" + ", <br>" + worldwideTemperatures.lastationType +
+  ("<br><br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + ", <br>" +
+  worldwideTemperatures.loweeType + ("<br><br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit +
+  "&#176;F" + ", <br>" + worldwideTemperatures.leanboxType;
 }
 
 function setTemperature(min, max) {
