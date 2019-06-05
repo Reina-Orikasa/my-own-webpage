@@ -202,12 +202,12 @@ fillHTML();
 // convert weather from F to C and vice versa
 worldwideTemperatures.celsius = function() {
   document.getElementById('weather').innerHTML = "<u>Weather Currently</u>" + ("<br>") + "<br>Planeptune: " +
-  worldwideTemperatures.planeptuneCelsius + "&#176;C" + ", <br>" + worldwideTemperatures.planeptuneType + ("<br>") +
+  worldwideTemperatures.planeptuneCelsius + "&#176;C" + " <br>" + worldwideTemperatures.planeptuneType + ("<br>") +
   ("<br>") + "<u>Elsewhere in Gamindustri</u>" + ("<br>") + ("<br>") + "Lastation: " +
-  worldwideTemperatures.lastationCelsius + "&#176;C" + ", <br>" + worldwideTemperatures.lastationType +
-  ("<br><br>") + "Lowee: " + worldwideTemperatures.loweeCelsius + "&#176;C" + ", <br>" +
+  worldwideTemperatures.lastationCelsius + "&#176;C" + " <br>" + worldwideTemperatures.lastationType +
+  ("<br><br>") + "Lowee: " + worldwideTemperatures.loweeCelsius + "&#176;C" + " <br>" +
   worldwideTemperatures.loweeType + ("<br><br>") + "Leanbox: " + worldwideTemperatures.leanboxCelsius +
-  "&#176;C" + ", <br>" + worldwideTemperatures.leanboxType;
+  "&#176;C" + " <br>" + worldwideTemperatures.leanboxType;
 
   document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityCelsius + "&#176;C, " + 
   worldwideTemperatures.weatherDescription;
@@ -221,7 +221,8 @@ worldwideTemperatures.fahrenheit = function() {
   document.getElementById('TokyoWeatherFahrenheit').innerHTML= "Tokyo: " + worldwideTemperatures.TokyoFahrenheit + "&#176;F, " + 
   worldwideTemperatures.tokyoWeatherDescription;
   document.getElementById('ParisWeatherFahrenheit').innerHTML = "Paris: " + worldwideTemperatures.ParisFahrenheit + "&#176;F, " +
-  worldwideTemperatures.parisWeatherDescription;; */
+  worldwideTemperatures.parisWeatherDescription;; 
+  */
 } 
 
 function fillWorldTemps() {
@@ -231,12 +232,12 @@ function fillWorldTemps() {
 
 function fillHTML() {
   document.getElementById('weather').innerHTML = "<u>Weather Currently</u>" + ("<br>") + "<br>Planeptune: " +
-  worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + ", <br>" + worldwideTemperatures.planeptuneType + ("<br>") +
+  worldwideTemperatures.planeptuneFahrenheit + "&#176;F" + " <br>" + worldwideTemperatures.planeptuneType + ("<br>") +
   ("<br>") + "<u>Elsewhere in Gamindustri</u>" + ("<br>") + ("<br>") + "Lastation: " +
-  worldwideTemperatures.lastationFahrenheit + "&#176;F" + ", <br>" + worldwideTemperatures.lastationType +
-  ("<br><br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + ", <br>" +
+  worldwideTemperatures.lastationFahrenheit + "&#176;F" + " <br>" + worldwideTemperatures.lastationType +
+  ("<br><br>") + "Lowee: " + worldwideTemperatures.loweeFahrenheit + "&#176;F" + " <br>" +
   worldwideTemperatures.loweeType + ("<br><br>") + "Leanbox: " + worldwideTemperatures.leanboxFahrenheit +
-  "&#176;F" + ", <br>" + worldwideTemperatures.leanboxType;
+  "&#176;F" + " <br>" + worldwideTemperatures.leanboxType;
 }
 
 function setTemperature(min, max) {

@@ -75,7 +75,7 @@ li.head a:hover {
 
 .footertext {
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .footertext a:hover, .footerlinks a:hover, .footerlinksbot a:hover, .reviewDescription:hover, 
@@ -95,6 +95,7 @@ li.head a:hover {
     color: darkblue;
     margin-left: 40%;
     display: inline-block;
+    font-size: 12px;
 }
 
 .nepimg{
