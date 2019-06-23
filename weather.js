@@ -99,7 +99,7 @@ function cityWeather(temp, description, cityName) {
   node.appendChild(tempNode);
   p1 = document.getElementById("worldTemps");
   p1.appendChild(node);*/
-  document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityFahrenheit + "&#176;F, " + 
+  document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityFahrenheit + "&#176;F <br>" + 
   worldwideTemperatures.weatherDescription;
 
   document.getElementById("worldHeader").innerHTML = "<u>Elsewhere in the World</u>"
@@ -209,7 +209,7 @@ worldwideTemperatures.celsius = function() {
   worldwideTemperatures.loweeType + ("<br><br>") + "Leanbox: " + worldwideTemperatures.leanboxCelsius +
   "&#176;C" + " <br>" + worldwideTemperatures.leanboxType;
 
-  document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityCelsius + "&#176;C, " + 
+  document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityCelsius + "&#176;C <br> " + 
   worldwideTemperatures.weatherDescription;
 }
 
@@ -226,7 +226,7 @@ worldwideTemperatures.fahrenheit = function() {
 } 
 
 function fillWorldTemps() {
-  document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityFahrenheit + "&#176;F, " + 
+  document.getElementById('worldTemps').innerHTML = worldwideTemperatures.cityName + ": " + worldwideTemperatures.cityFahrenheit + "&#176;F <br> " + 
   worldwideTemperatures.weatherDescription;
 }
 
