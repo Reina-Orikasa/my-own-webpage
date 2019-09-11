@@ -6,7 +6,7 @@ html { font-family: 'Inter', sans-serif; }
 
 body {
     font-family: Inter;
-    background-color: darkslategrey;
+    background-color: lightslategray;
 }
 
 * {
@@ -74,7 +74,7 @@ li.head a:hover {
 }
 
 .footertext {
-    text-align: center;
+    margin-left: 40%;
     font-size: 12px;
 }
 
@@ -91,11 +91,14 @@ li.head a:hover {
     color: darkblue;
 }
 
-.footerlinksbot a {
+.footerLinkList li, .footerLinkList a {
+    font-size: 14px;
     color: darkblue;
-    margin-left: 40%;
     display: inline-block;
-    font-size: 12px;
+    text-align: center;
+    list-style-type: none;
+    padding-right: 20px;
+    padding-bottom: 10px;
 }
 
 .nepimg{
